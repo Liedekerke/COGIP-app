@@ -2,7 +2,7 @@
 
 /* Connect to a MySQL database using driver invocation */
 $dsn = 'mysql:dbname=cgpi;host=127.0.0.1';
-$user = 'root';
+$user =  'root', '12345678';
 
 try {
     $dbh = new PDO($dsn, $user);
