@@ -1,9 +1,9 @@
 <?php
 
 /* Connect to a MySQL database using driver invocation */
-$dsn = 'mysql:dbname=cgpi;host=localhost';
-$user =  'root';
-$password = 'rootme';
+$dsn = getenv('DSN');
+$user = getenv('USER');
+$password = getenv('PASSWORD');
 
 try {
     $dbh = new PDO($dsn, $user, $password);

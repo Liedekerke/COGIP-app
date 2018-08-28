@@ -99,10 +99,10 @@
        </tbody>
      </table>
      <div class="">
-       <a href="fournisseurs">Fournisseurs</a>
+       <a href="fournisseurs.php">Fournisseurs</a>
      </div>
      <div class="">
-       <a href="clients">Clients</a>
+       <a href="clients.php">Clients</a>
      </div>
    </body>
  </html>
