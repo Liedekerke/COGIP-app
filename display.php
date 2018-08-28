@@ -1,11 +1,12 @@
 <?php
 
 /* Connect to a MySQL database using driver invocation */
-$dsn = 'mysql:dbname=cgpi;host=127.0.0.1';
-$user = 'root';
+$dsn = getenv('DSN');
+$user = getenv('USER');
+$password = getenv('PASSWORD');
 
 try {
-    $dbh = new PDO($dsn, $user);
+    $dbh = new PDO($dsn, $user, $password);
     $displayLatestFactures = $dbh->query('SELECT * FROM ( SELECT * FROM factures ORDER BY idfactures DESC LIMIT 5 ) sub  ORDER BY datefacture DESC');
 
     $displayLatestCredit = $dbh->query('SELECT * FROM notecredit ORDER BY datenotecredit DESC LIMIT 0,5');
