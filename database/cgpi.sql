@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2018 at 09:22 AM
+-- Generation Time: Aug 28, 2018 at 10:26 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -21,18 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `cgpi`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `boncommande`
---
-
-CREATE TABLE `boncommande` (
-  `idboncommande` int(11) NOT NULL,
-  `dateboncommande` date NOT NULL,
-  `idfactures` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE DATABASE IF NOT EXISTS `cgpi` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `cgpi`;
 
 -- --------------------------------------------------------
 
@@ -44,8 +34,7 @@ CREATE TABLE `devis` (
   `iddevis` int(11) NOT NULL,
   `estimationtime` int(11) NOT NULL,
   `estimationprice` int(11) NOT NULL,
-  `datedevis` date NOT NULL,
-  `idboncommande` int(11) NOT NULL
+  `datedevis` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -128,18 +117,10 @@ CREATE TABLE `type` (
 --
 
 --
--- Indexes for table `boncommande`
---
-ALTER TABLE `boncommande`
-  ADD PRIMARY KEY (`idboncommande`),
-  ADD KEY `idfactures` (`idfactures`);
-
---
 -- Indexes for table `devis`
 --
 ALTER TABLE `devis`
-  ADD PRIMARY KEY (`iddevis`),
-  ADD KEY `idboncommande` (`idboncommande`);
+  ADD PRIMARY KEY (`iddevis`);
 
 --
 -- Indexes for table `factures`
@@ -181,12 +162,6 @@ ALTER TABLE `type`
 --
 
 --
--- AUTO_INCREMENT for table `boncommande`
---
-ALTER TABLE `boncommande`
-  MODIFY `idboncommande` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `devis`
 --
 ALTER TABLE `devis`
@@ -225,18 +200,6 @@ ALTER TABLE `type`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `boncommande`
---
-ALTER TABLE `boncommande`
-  ADD CONSTRAINT `boncommande_ibfk_1` FOREIGN KEY (`idfactures`) REFERENCES `factures` (`idfactures`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Constraints for table `devis`
---
-ALTER TABLE `devis`
-  ADD CONSTRAINT `devis_ibfk_1` FOREIGN KEY (`idboncommande`) REFERENCES `boncommande` (`idboncommande`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `factures`
