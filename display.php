@@ -1,11 +1,12 @@
 <?php
 
 /* Connect to a MySQL database using driver invocation */
-$dsn = 'mysql:dbname=cgpi;host=127.0.0.1';
-$user =  'root', '12345678';
+$dsn = 'mysql:dbname=cgpi;host=localhost';
+$user =  'root';
+$password = 'rootme';
 
 try {
-    $dbh = new PDO($dsn, $user);
+    $dbh = new PDO($dsn, $user, $password);
     $displayLatestFactures = $dbh->query('SELECT * FROM ( SELECT * FROM factures ORDER BY idfactures DESC LIMIT 5 ) sub  ORDER BY datefacture DESC');
 
     $displayLatestCredit = $dbh->query('SELECT * FROM notecredit ORDER BY datenotecredit DESC LIMIT 0,5');
@@ -17,6 +18,10 @@ try {
     $displaySocietiesAlphab = $dbh->query('SELECT socialstatus, idsociete FROM societe ORDER BY socialstatus ASC');
 
     $displayFacturesAlphab = $dbh->query('SELECT idfactures, datefacture FROM factures ORDER BY datefacture DESC');
+
+    $displaySocietiesSuppliers = $dbh->query("SELECT socialstatus FROM societe LEFT JOIN type ON societe.idsociete = type.idsociete WHERE type.relation = 'fournisseurs'");
+
+    $displaySocietiesCustomers = $dbh->query("SELECT socialstatus FROM societe LEFT JOIN type ON societe.idsociete = type.idsociete WHERE type.relation = 'clients'");
 
     $displayDetailsSocieties = $dbh->prepare('SELECT societe.socialstatus, societe.adresse, societe.telephonesociete, societe.tvanumber, societe.account, devis.iddevis, boncommande.idboncommande, factures.idfactures, notecredit.idnotecredit, personnes.name, personnes.firstname, type.type FROM societe left JOIN factures ON societe.idsociete = factures.idfactures LEFT JOIN personnes ON societe.idsociete = personnes.idsociete LEFT JOIN notecredit ON factures.idfactures = notecredit.idfactures LEFT JOIN type ON societe.idsociete = type.idsociete LEFT JOIN boncommande ON factures.idfactures = boncommande.idfactures LEFT JOIN devis ON boncommande.idboncommande = devis.idboncommande WHERE societe.idsociete = :id');
 
