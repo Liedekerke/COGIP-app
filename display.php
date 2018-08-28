@@ -47,6 +47,13 @@ try {
       $displayDetailsFactures->execute();
     }
 
+    $displayDetailsPersonnes = $dbh->query('SELECT personnes.name, personnes.firstname, personnes.personnesphone, personnes.email, societe.socialstatus, societe.adresse, factures.idfactures FROM personnes LEFT JOIN societe ON personnes.idsociete = societe.idsociete LEFT JOIN factures ON personnes.idpersonnes = factures.idpersonnes WHERE personnes.idpersonnes = :idpersonnes');
+    $displayDetailsPersonnes->bindParam(':idpersonnes', $idpersonnes);
+    if (isset($_GET['personnes'])) {
+      $idpersonnes = $_GET['personnes'];
+      $displayDetailsPersonnes->execute();
+    }
+
     } catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
 }
