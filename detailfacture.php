@@ -12,23 +12,21 @@ include 'display.php';
      <table>
        <thead>
          <th>id</th>
+         <th>date</th>
+         <th>social name</th>
+         <th>relation</th>
          <th>name</th>
-         <th>adresse</th>
-         <th>country</th>
-         <th>tva number</th>
-         <th>phone number</th>
+         <th>firstname</th>
        </thead>
        <tbody>
          <?php while ($donnee = $displayDetailsFactures->fetch()) { ?>
            <tr>
-             <td><?php echo $donnee['idfactures'] //done?></td>
-             <td><?php echo $donnee['datefacture'] //done?></td>
-             <td><?php echo $donnee['idboncommande'] //done ?></td>
-             <td><?php echo $donnee['socialstatus'] // done ?></td>
-             <td><?php echo $donnee['relation'] // done ?></td>
-             <td><?php echo $donnee['account'] // done?></td>
-             <td><?php echo $donnee['name'] //done ?></td>
-             <td><?php echo $donnee['firstname'] //done ?></td>
+             <td><?php echo $donnee['idfactures'] ?></td>
+             <td><?php echo $donnee['datefacture'] ?></td>
+             <td><?php echo $donnee['socialname'] ?></td>
+             <td><?php echo $donnee['relation'] ?></td>
+             <td><?php echo $donnee['name'] ?></td>
+             <td><?php echo $donnee['firstname'] ?></td>
            </tr>
          <?php } ?>
        </tbody>
