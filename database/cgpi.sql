@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2018 at 10:19 AM
+-- Generation Time: Aug 29, 2018 at 02:47 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -28,12 +28,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `devis`
 --
 
-CREATE TABLE IF NOT EXISTS `devis` (
-  `iddevis` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `devis` (
+  `iddevis` int(11) NOT NULL,
   `estimationtime` int(11) NOT NULL,
   `estimationprice` int(11) NOT NULL,
-  `datedevis` date NOT NULL,
-  PRIMARY KEY (`iddevis`)
+  `datedevis` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -42,16 +41,13 @@ CREATE TABLE IF NOT EXISTS `devis` (
 -- Table structure for table `factures`
 --
 
-CREATE TABLE IF NOT EXISTS `factures` (
-  `idfactures` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `factures` (
+  `idfactures` int(11) NOT NULL,
   `datefacture` date NOT NULL,
   `prestationmotif` varchar(45) NOT NULL,
-  `idsociete` int(11) NOT NULL,
-  `idpersonnes` int(11) NOT NULL,
-  PRIMARY KEY (`idfactures`),
-  KEY `factures_ibfk_1` (`idsociete`),
-  KEY `idpersonnes` (`idpersonnes`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+  `idsociete` int(11) DEFAULT NULL,
+  `idpersonnes` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `factures`
@@ -79,13 +75,11 @@ INSERT INTO `factures` (`idfactures`, `datefacture`, `prestationmotif`, `idsocie
 -- Table structure for table `notecredit`
 --
 
-CREATE TABLE IF NOT EXISTS `notecredit` (
-  `idnotecredit` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `notecredit` (
+  `idnotecredit` int(11) NOT NULL,
   `reduction` int(11) NOT NULL,
   `datenotecredit` date NOT NULL,
-  `idfactures` int(11) NOT NULL,
-  PRIMARY KEY (`idnotecredit`),
-  KEY `notecredit_ibfk_1` (`idfactures`)
+  `idfactures` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -94,16 +88,14 @@ CREATE TABLE IF NOT EXISTS `notecredit` (
 -- Table structure for table `personnes`
 --
 
-CREATE TABLE IF NOT EXISTS `personnes` (
-  `idpersonnes` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `personnes` (
+  `idpersonnes` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `firstname` varchar(20) NOT NULL,
   `personnesphone` int(20) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `idsociete` int(11) NOT NULL,
-  PRIMARY KEY (`idpersonnes`),
-  KEY `personnes_ibfk_1` (`idsociete`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+  `idsociete` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `personnes`
@@ -128,15 +120,14 @@ INSERT INTO `personnes` (`idpersonnes`, `name`, `firstname`, `personnesphone`, `
 -- Table structure for table `societe`
 --
 
-CREATE TABLE IF NOT EXISTS `societe` (
-  `idsociete` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `societe` (
+  `idsociete` int(11) NOT NULL,
   `socialname` varchar(45) NOT NULL,
   `adresse` varchar(45) NOT NULL,
   `country` varchar(45) NOT NULL,
   `tvanumber` int(3) NOT NULL,
-  `telephonesociete` int(20) NOT NULL,
-  PRIMARY KEY (`idsociete`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  `telephonesociete` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `societe`
@@ -156,14 +147,109 @@ INSERT INTO `societe` (`idsociete`, `socialname`, `adresse`, `country`, `tvanumb
 -- Table structure for table `type`
 --
 
-CREATE TABLE IF NOT EXISTS `type` (
-  `idtype` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `type` (
+  `idtype` int(11) NOT NULL,
   `type` set('ASBL','SPRL','SA') NOT NULL,
   `relation` set('fournisseur','client') NOT NULL,
-  `idsociete` int(11) NOT NULL,
-  PRIMARY KEY (`idtype`),
-  KEY `idsociete` (`idsociete`)
+  `idsociete` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `type`
+--
+
+INSERT INTO `type` (`idtype`, `type`, `relation`, `idsociete`) VALUES
+(1, 'ASBL', 'fournisseur', 1),
+(2, 'SPRL', 'client', 2),
+(3, 'SA', 'fournisseur', 3),
+(4, 'ASBL', 'client', 4),
+(5, 'SPRL', 'fournisseur', 5),
+(6, 'SA', 'client', 6);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `devis`
+--
+ALTER TABLE `devis`
+  ADD PRIMARY KEY (`iddevis`);
+
+--
+-- Indexes for table `factures`
+--
+ALTER TABLE `factures`
+  ADD PRIMARY KEY (`idfactures`),
+  ADD KEY `factures_ibfk_1` (`idsociete`),
+  ADD KEY `idpersonnes` (`idpersonnes`);
+
+--
+-- Indexes for table `notecredit`
+--
+ALTER TABLE `notecredit`
+  ADD PRIMARY KEY (`idnotecredit`),
+  ADD KEY `notecredit_ibfk_1` (`idfactures`);
+
+--
+-- Indexes for table `personnes`
+--
+ALTER TABLE `personnes`
+  ADD PRIMARY KEY (`idpersonnes`),
+  ADD KEY `personnes_ibfk_1` (`idsociete`);
+
+--
+-- Indexes for table `societe`
+--
+ALTER TABLE `societe`
+  ADD PRIMARY KEY (`idsociete`);
+
+--
+-- Indexes for table `type`
+--
+ALTER TABLE `type`
+  ADD PRIMARY KEY (`idtype`),
+  ADD KEY `idsociete` (`idsociete`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `devis`
+--
+ALTER TABLE `devis`
+  MODIFY `iddevis` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `factures`
+--
+ALTER TABLE `factures`
+  MODIFY `idfactures` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `notecredit`
+--
+ALTER TABLE `notecredit`
+  MODIFY `idnotecredit` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `personnes`
+--
+ALTER TABLE `personnes`
+  MODIFY `idpersonnes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `societe`
+--
+ALTER TABLE `societe`
+  MODIFY `idsociete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `type`
+--
+ALTER TABLE `type`
+  MODIFY `idtype` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -174,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `type` (
 --
 ALTER TABLE `factures`
   ADD CONSTRAINT `factures_ibfk_1` FOREIGN KEY (`idsociete`) REFERENCES `societe` (`idsociete`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `factures_ibfk_2` FOREIGN KEY (`idpersonnes`) REFERENCES `personnes` (`idpersonnes`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `factures_ibfk_2` FOREIGN KEY (`idpersonnes`) REFERENCES `personnes` (`idpersonnes`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `notecredit`
@@ -186,7 +272,7 @@ ALTER TABLE `notecredit`
 -- Constraints for table `personnes`
 --
 ALTER TABLE `personnes`
-  ADD CONSTRAINT `personnes_ibfk_1` FOREIGN KEY (`idsociete`) REFERENCES `societe` (`idsociete`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `personnes_ibfk_1` FOREIGN KEY (`idsociete`) REFERENCES `societe` (`idsociete`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `type`
