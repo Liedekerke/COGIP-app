@@ -12,24 +12,14 @@
        <thead>
          <th>ID</th>
          <th>Date</th>
-         <th>dates prestations</th>
-         <th>Prix</th>
-         <th>hors tva</th>
-         <th>Taux tva</th>
-         <th>prix ttc</th>
-         <th>id note crédit</th>
+         <th>Motif prestations</th>
        </thead>
        <tbody>
         <?php while ($donnee = $displayLatestFactures->fetch()) { ?>
           <tr>
             <td><?php echo $donnee['idfactures'] ?></td>
             <td><?php echo $donnee['datefacture'] ?></td>
-            <td><?php echo $donnee['prestationdates'] ?></td>
-            <td><?php echo $donnee['prix'] ?></td>
-            <td><?php echo $donnee['ht']?></td>
-            <td><?php echo $donnee['tauxtva'] ?></td>
-            <td><?php echo $donnee['ttc'] ?></td>
-            <td><?php echo $donnee['idnotecredit'] ?></td>
+            <td><?php echo $donnee['prestationmotif'] ?></td>
           </tr>
         <?php } ?>
        </tbody>
@@ -55,7 +45,7 @@
          <th>first name</th>
          <th>phone number</th>
          <th>email</th>
-         <th>facture id</th>
+      <!--    <th>facture id</th> -->
        </thead>
        <tbody>
          <?php while ($donneethird = $displayLatestPeople->fetch()) { ?>
@@ -65,8 +55,8 @@
            <td><?php echo $donneethird['firstname'] ?></td>
            <td><?php echo $donneethird['personnesphone'] ?></td>
            <td><?php echo $donneethird['email'] ?></td>
-           <td><?php echo $donneethird['idfactures'] ?></td>
-         </tr>
+<!--            <td><?php echo $donneethird['idfactures'] ?></td>
+ -->         </tr>
         <?php } ?>
        </tbody>
      </table>
@@ -78,31 +68,31 @@
          <th>country</th>
          <th>tva number</th>
          <th>phone number</th>
-         <th>id type</th>
+       <!--   <th>id type</th>
          <th>id facture</th>
-         <th>id personnes</th>
+         <th>id personnes</th> -->
        </thead>
        <tbody>
          <?php while ($donneefourth = $displayLatestSocieties->fetch()) { ?>
            <tr>
              <td><?php echo $donneefourth['idsociete'] ?></td>
-             <td><?php echo $donneefourth['socialstatus'] ?></td>
+             <td><?php echo $donneefourth['socialname'] ?></td>
              <td><?php echo $donneefourth['adresse'] ?></td>
              <td><?php echo $donneefourth['country'] ?></td>
              <td><?php echo $donneefourth['tvanumber'] ?></td>
              <td><?php echo $donneefourth['telephonesociete'] ?></td>
-             <td><?php echo $donneefourth['idtype'] ?></td>
+             <!-- <td><?php echo $donneefourth['idtype'] ?></td>
              <td><?php echo $donneefourth['idfactures'] ?></td>
-             <td><?php echo $donneefourth['idpersonnes'] ?></td>
+             <td><?php echo $donneefourth['idpersonnes'] ?></td> -->
            </tr>
          <?php } ?>
        </tbody>
      </table>
      <div class="">
-       <a href="fournisseurs">Fournisseurs</a>
+       <a href="fournisseurs.php">Fournisseurs</a>
      </div>
      <div class="">
-       <a href="clients">Clients</a>
+       <a href="clients.php">Clients</a>
      </div>
    </body>
  </html>
