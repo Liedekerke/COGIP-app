@@ -19,9 +19,7 @@ try {
 
     $displayFacturesAlphab = $dbh->query('SELECT idfactures, datefacture FROM factures ORDER BY datefacture DESC');
 
-    $displayAnnuaireAlphab = $dbh->query('SELECT name, firstname FROM personnes ORDER BY name, firstname');
-
-    $displayDetailsAnnuaire = $dbh->prepare('SELECT personnes.name, personnes.firstname FROM personnes SELF JOIN personnes ON ouioui ');
+    $displayAnnuaireAlphab = $dbh->query('SELECT name, firstname, idpersonnes FROM personnes ORDER BY name ASC');
 
     $displayDetailsSocieties = $dbh->prepare('SELECT societe.socialstatus, societe.adresse, societe.telephonesociete, societe.tvanumber, societe.account, devis.iddevis, boncommande.idboncommande, factures.idfactures, notecredit.idnotecredit, personnes.name, personnes.firstname, type.type FROM societe left JOIN factures ON societe.idsociete = factures.idfactures LEFT JOIN personnes ON societe.idsociete = personnes.idsociete LEFT JOIN notecredit ON factures.idfactures = notecredit.idfactures LEFT JOIN type ON societe.idsociete = type.idsociete LEFT JOIN boncommande ON factures.idfactures = boncommande.idfactures LEFT JOIN devis ON boncommande.idboncommande = devis.idboncommande WHERE societe.idsociete = :id');
     $displaySocietiesSuppliers = $dbh->query("SELECT socialname FROM societe LEFT JOIN type ON societe.idsociete = type.idsociete WHERE type.relation = 'fournisseurs'");
@@ -60,7 +58,7 @@ try {
     $displayDetailsPersonnes = $dbh->prepare('SELECT personnes.name, personnes.firstname, personnes.personnesphone, personnes.email, societe.socialstatus, societe.adresse, factures.idfactures FROM personnes LEFT JOIN societe ON personnes.idsociete = societe.idsociete LEFT JOIN factures ON personnes.idpersonnes = factures.idpersonnes WHERE personnes.idpersonnes = :idpersonnes');
     $displayDetailsPersonnes->bindParam(':idpersonnes', $idpersonnes);
     if (isset($_GET['personnes'])) {
-      $idpersonnes = $_GET['personnes'];
+      $idpersonnes = $_GET['annuaire'];
       $displayDetailsPersonnes->execute();
     }
 
