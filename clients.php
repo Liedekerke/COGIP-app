@@ -18,7 +18,7 @@ include 'display.php';
            <tr>
              <td><a href="detailsociete.php?societe=
               <?php echo $dataCustomers['idsociete'] ?>">
-              <?php echo $dataCustomers['socialstatus'] ?>
+              <?php echo $dataCustomers['socialname'] ?>
               </a></td>
            </tr>
          <?php } ?>

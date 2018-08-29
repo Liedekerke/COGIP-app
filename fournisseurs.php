@@ -1,5 +1,5 @@
-<?php 
-include 'display.php'; 
+<?php
+include 'display.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ include 'display.php';
            <tr>
               <td><a href="detailsociete.php?societe=
               	<?php echo $dataSuppliers['idsociete'] ?>">
-              	<?php echo $dataSuppliers['socialstatus'] ?>
+              	<?php echo $dataSuppliers['socialname'] ?>
               </a></td>
            </tr>
          <?php } ?>
