@@ -1,9 +1,9 @@
 <?php
 
 /* Connect to a MySQL database using driver invocation */
-$dsn = getenv('DSN');
-$user = getenv('USER');
-$password = getenv('PASSWORD');
+$dsn = 'mysql:dbname=cgpi;host=localhost';
+$user = 'root';
+$password = '12345678';
 
 try {
     $dbh = new PDO($dsn, $user, $password);
@@ -19,9 +19,7 @@ try {
 
     $displayFacturesAlphab = $dbh->query('SELECT idfactures, datefacture FROM factures ORDER BY datefacture DESC');
 
-    $displayAnnuaireAlphab = $dbh->query('SELECT name, firstname FROM personnes ORDER BY name, firstname');
-
-    $displayDetailsAnnuaire = $dbh->prepare('SELECT personnes.name, personnes.firstname FROM personnes SELF JOIN personnes ON ouioui ');
+    $displayAnnuaireAlphab = $dbh->query('SELECT idpersonnes, name, firstname FROM personnes ORDER BY name, firstname');
 
     $displayDetailsSocieties = $dbh->prepare('SELECT societe.socialstatus, societe.adresse, societe.telephonesociete, societe.tvanumber, societe.account, devis.iddevis, boncommande.idboncommande, factures.idfactures, notecredit.idnotecredit, personnes.name, personnes.firstname, type.type FROM societe left JOIN factures ON societe.idsociete = factures.idfactures LEFT JOIN personnes ON societe.idsociete = personnes.idsociete LEFT JOIN notecredit ON factures.idfactures = notecredit.idfactures LEFT JOIN type ON societe.idsociete = type.idsociete LEFT JOIN boncommande ON factures.idfactures = boncommande.idfactures LEFT JOIN devis ON boncommande.idboncommande = devis.idboncommande WHERE societe.idsociete = :id');
 
