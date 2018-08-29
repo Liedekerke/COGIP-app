@@ -13,8 +13,6 @@
         <th>prénom</th>
         <th>téléphone</th>
         <th>email</th>
-        <th>nom de société</th>
-        <th>adresse société</th>
       </thead>
       <tbody>
         <?php while ($donnee = $displayDetailsPersonnes->fetch()) { ?>
@@ -23,12 +21,26 @@
             <td><?php echo $donnee['firstname']?></td>
             <td><?php echo $donnee['personnesphone']?></td>
             <td><?php echo $donnee['email']?></td>
-            <td><?php echo $donnee['socialname']?></td>
-            <td><?php echo $donnee['adresse']?></td>
           </tr>
         <?php } ?>
       </tbody>
     </table>
+
+    <table>
+      <thead>
+        <th>social name</th>
+        <th>adresse</th>
+      </thead>
+      <tbody>
+        <?php while ($donnee3 = $displayDetailsPersonnes3->fetch()) { ?>
+          <tr>
+            <td><?php echo $donnee3['socialname']?></td>
+            <td><?php echo $donnee3['adresse']?></td>
+          </tr>
+        <?php } ?>
+      </tbody>
+    </table>
+
     <table>
       <thead>
         <th>factures</th>
