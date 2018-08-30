@@ -16,10 +16,11 @@ function testselect($par1, $par2) {
   }
 }
 
-function delete($database) {
-  $deleteFacture = $dbh->prepare("DELETE FROM ".$database." WHERE idfactures = :idgeneral");
-  $deleteFacture->bindParam(':idgeneral', $param);
-  $param = $_POST['delete'];
+function delete($database, $param) {
+  global $dbh;
+  $deleteFacture = $dbh->prepare("DELETE FROM ".$database." WHERE ".$param." = :idgeneral");
+  $deleteFacture->bindParam(':idgeneral', $delete);
+  $delete = $_POST['iddelete'];
   $deleteFacture->execute();
 }
 

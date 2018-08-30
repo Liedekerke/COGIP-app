@@ -14,7 +14,7 @@
 
   if (isset($_POST['update'])) {
     $datefacture = $_POST['datefacture'];
-    $prestationmotif = $_POST['prestationmotif'];
+    $prestationmotif = filter_var($_POST['prestationmotif'], FILTER_SANITIZE_STRING);
     $idsociete = $_POST['idsociete'];
     $idpersonnes = $_POST['idpersonnes'];
     $updateDetailFacture->execute();

@@ -1,10 +1,9 @@
 <?php
-require "models/dashboard.model.php";
 
 if (isset($_POST['delete'])) {
-  delete($database);
+  delete("factures", "idfactures");
 }
-
+require "models/dashboard.model.php";
 require "views/dashboard.view.php";
 
  ?>
