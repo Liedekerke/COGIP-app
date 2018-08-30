@@ -23,23 +23,36 @@ try {
     $displayFacturesAlphab = $dbh->query('SELECT idfactures, datefacture FROM factures ORDER BY datefacture DESC');
     $displayAnnuaireAlphab = $dbh->query('SELECT name, firstname, idpersonnes FROM personnes ORDER BY name ASC');
 
-    $displayDetailsSocieties = $dbh->prepare('SELECT societe.socialstatus, societe.adresse, societe.telephonesociete, societe.tvanumber, societe.account, devis.iddevis, boncommande.idboncommande, factures.idfactures, notecredit.idnotecredit, personnes.name, personnes.firstname, type.type FROM societe left JOIN factures ON societe.idsociete = factures.idfactures LEFT JOIN personnes ON societe.idsociete = personnes.idsociete LEFT JOIN notecredit ON factures.idfactures = notecredit.idfactures LEFT JOIN type ON societe.idsociete = type.idsociete LEFT JOIN boncommande ON factures.idfactures = boncommande.idfactures LEFT JOIN devis ON boncommande.idboncommande = devis.idboncommande WHERE societe.idsociete = :id');
     $displaySocietiesSuppliers = $dbh->query("SELECT socialname FROM societe LEFT JOIN type ON societe.idsociete = type.idsociete WHERE type.relation = 'fournisseur'");
 
     $displaySocietiesCustomers = $dbh->query("SELECT socialname FROM societe LEFT JOIN type ON societe.idsociete = type.idsociete WHERE type.relation = 'client'");
 
-    // $displayDetailsSocieties = $dbh->prepare('SELECT societe.socialname, societe.adresse, societe.telephonesociete, societe.tvanumber, factures.idfactures, personnes.name, personnes.firstname FROM societe left JOIN factures ON societe.idsociete = factures.idsociete LEFT JOIN personnes ON societe.idsociete = personnes.idsociete WHERE societe.idsociete = :id');
-
-    $displayDetailsSocieties = $dbh->prepare('SELECT * FROM societe WHERE societe.idsociete = :id');
-    $displayDetailsSocieties2 = $dbh->prepare('SELECT * FROM personnes WHERE personnes.idsociete = :id');
-    $displayDetailsSocieties3 = $dbh->prepare('SELECT * FROM factures WHERE factures.idsociete = :id');
-
-    $displayDetailsSocieties->bindParam(':id', $id);
-    $displayDetailsSocieties2->bindParam(':id', $id);
-    $displayDetailsSocieties3->bindParam(':id', $id);
-
+    
     if (isset($_GET['societe'])) {
       $id = $_GET['societe'];
+
+      if(isset($_POST['update'])) {
+        $updateDetailsSociety = $dbh->prepare('UPDATE societe SET socialname = :socialname, adresse = :adresse, telephonesociete = :telephonesociete, tvanumber = :tvanumber WHERE idsociete = :id');
+        $updateDetailsSociety->bindParam(':socialname', $socialname);
+        $updateDetailsSociety->bindParam(':adresse', $adresse);
+        $updateDetailsSociety->bindParam(':telephonesociete', $telephonesociete);
+        $updateDetailsSociety->bindParam(':tvanumber', $tvanumber);
+        $updateDetailsSociety->bindParam(':id', $id);
+        $socialname = $_POST['socialname'];
+        $adresse = $_POST['adresse'];
+        $telephonesociete = $_POST['telephonesociete'];
+        $tvanumber = $_POST['tvanumber'];
+        $updateDetailsSociety->execute();
+      }
+
+      $displayDetailsSocieties = $dbh->prepare('SELECT * FROM societe WHERE societe.idsociete = :id');
+      $displayDetailsSocieties2 = $dbh->prepare('SELECT * FROM personnes WHERE personnes.idsociete = :id');
+      $displayDetailsSocieties3 = $dbh->prepare('SELECT * FROM factures WHERE factures.idsociete = :id');
+
+      $displayDetailsSocieties->bindParam(':id', $id);
+      $displayDetailsSocieties2->bindParam(':id', $id);
+      $displayDetailsSocieties3->bindParam(':id', $id);
+
       $displayDetailsSocieties->execute();
       $displayDetailsSocieties2->execute();
       $displayDetailsSocieties3->execute();
