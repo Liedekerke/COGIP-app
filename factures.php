@@ -17,8 +17,8 @@ include 'display.php';
        <tbody>
          <?php while ($donnee = $displayFacturesAlphab->fetch()) { ?>
            <tr>
-             <td><a href="detailfacture.php?factures=<?php echo 'idfactures' ?>"><?php echo 'idfactures' ?></a></td>
-             <td><?php echo 'datefacture' ?></td>
+             <td><a href="detailfacture.php?factures=<?php echo 'idfactures' ?>"><?php echo $donnee['idfactures'] ?></a></td>
+             <td><?php echo $donnee['datefacture'] ?></td>
            </tr>
          <?php } ?>
        </tbody>
