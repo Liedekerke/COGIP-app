@@ -5,20 +5,22 @@ $dsn = getenv('DSN');
 $user = getenv('USER');
 $password = getenv('PASSWORD');
 
+function testselect($par1, $par2) {
+  if ($par1 == $par2) {
+    echo "selected";
+  }
+}
+
+
 try {
     $dbh = new PDO($dsn, $user, $password);
     $displayLatestFactures = $dbh->query('SELECT * FROM factures LEFT JOIN societe ON factures.idsociete = societe.idsociete ORDER BY datefacture DESC LIMIT 0,5');
-
     $displayLatestCredit = $dbh->query('SELECT * FROM notecredit ORDER BY datenotecredit DESC LIMIT 0,5');
-
     $displayLatestPeople = $dbh->query('SELECT * FROM personnes LEFT JOIN societe ON personnes.idsociete = societe.idsociete ORDER BY idpersonnes DESC LIMIT 0,5');
-
     $displayLatestSocieties = $dbh->query('SELECT * FROM societe ORDER BY idsociete DESC LIMIT 0,5');
 
     $displaySocietiesAlphab = $dbh->query('SELECT socialname, idsociete FROM societe ORDER BY socialname ASC');
-
     $displayFacturesAlphab = $dbh->query('SELECT idfactures, datefacture FROM factures ORDER BY datefacture DESC');
-
     $displayAnnuaireAlphab = $dbh->query('SELECT name, firstname, idpersonnes FROM personnes ORDER BY name ASC');
 
     $displayDetailsSocieties = $dbh->prepare('SELECT societe.socialstatus, societe.adresse, societe.telephonesociete, societe.tvanumber, societe.account, devis.iddevis, boncommande.idboncommande, factures.idfactures, notecredit.idnotecredit, personnes.name, personnes.firstname, type.type FROM societe left JOIN factures ON societe.idsociete = factures.idfactures LEFT JOIN personnes ON societe.idsociete = personnes.idsociete LEFT JOIN notecredit ON factures.idfactures = notecredit.idfactures LEFT JOIN type ON societe.idsociete = type.idsociete LEFT JOIN boncommande ON factures.idfactures = boncommande.idfactures LEFT JOIN devis ON boncommande.idboncommande = devis.idboncommande WHERE societe.idsociete = :id');
@@ -43,14 +45,31 @@ try {
       $displayDetailsSocieties3->execute();
     }
 
-    $sqlDetailsFactures = "SELECT factures.idfactures, factures.datefacture, societe.socialname, societe.idsociete, type.relation, personnes.name, personnes.firstname FROM factures LEFT JOIN societe ON factures.idsociete = societe.idsociete LEFT JOIN type ON societe.idsociete = type.idsociete LEFT JOIN personnes ON factures.idpersonnes = personnes.idpersonnes WHERE factures.idfactures = :idfactures";
 
-    $displayDetailsFactures = $dbh->prepare($sqlDetailsFactures);
-    $displayDetailsFactures->bindParam(':idfactures', $idfactures);
     // $displayDetailsFactures->execute();
     if (isset($_GET['factures'])) {
+      $displayDetailsFactures = $dbh->prepare("SELECT * FROM factures LEFT JOIN type ON factures.idsociete = type.idsociete WHERE factures.idfactures = :idfactures");
+      $displayDetailsFactures->bindParam(':idfactures', $idfactures);
+
       $idfactures = $_GET['factures'];
       $displayDetailsFactures->execute();
+
+      $displayDetailsFactures2 = $dbh->query("SELECT socialname, idsociete FROM societe");
+      $displayDetailsFactures3 = $dbh->query("SELECT idpersonnes, name, firstname FROM personnes");
+
+      if (isset($_POST['update'])) {
+        $updateDetailFacture = $dbh->prepare('UPDATE factures SET datefacture = :datefacture, prestationmotif = :prestationmotif, idsociete = :idsociete, idpersonnes = :idpersonnes WHERE idfactures = :idfactures');
+        $updateDetailFacture->bindParam(':datefacture', $datefacture);
+        $updateDetailFacture->bindParam(':prestationmotif', $prestationmotif);
+        $updateDetailFacture->bindParam(':idsociete', $idsociete);
+        $updateDetailFacture->bindParam(':idpersonnes', $idpersonnes);
+        $updateDetailFacture->bindParam(':idfactures', $idfactures);
+        $datefacture = $_POST['datefacture'];
+        $prestationmotif = $_POST['prestationmotif'];
+        $idsociete = $_POST['idsociete'];
+        $idpersonnes = $_POST['idpersonnes'];
+        $updateDetailFacture->execute();
+      }
     }
 
     $displayDetailsPersonnes = $dbh->prepare('SELECT personnes.name, personnes.firstname, personnes.personnesphone, personnes.email FROM personnes WHERE personnes.idpersonnes = :idpersonnes');
