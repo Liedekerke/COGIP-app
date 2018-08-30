@@ -4,6 +4,7 @@
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
    <head>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
      <meta charset="utf-8">
      <title></title>
    </head>
@@ -22,6 +23,12 @@
             <td><?php echo $donnee['datefacture'] ?></td>
             <td><?php echo $donnee['prestationmotif'] ?></td>
             <td><a href="detailsociete.php?societe=<?php echo $donnee['idsociete'] ?>"><?php echo $donnee['socialname'] ?></a></td>
+            <td>
+              <form class="" action="" method="post">
+                <input type="hidden" name="iddelete" value="<?php echo $donneed['idfactures'] ?>">
+                <button type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
+              </form>
+            </td>
           </tr>
         <?php } ?>
        </tbody>
