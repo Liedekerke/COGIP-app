@@ -12,7 +12,7 @@
        <tbody>
          <?php while ($dataCustomers = $displaySocietiesCustomers->fetch()) { ?>
            <tr>
-             <td><a href="detailsociete.php?societe=
+             <td><a href="?page=detailsociete&societe=
               <?php echo $dataCustomers['idsociete'] ?>">
               <?php echo $dataCustomers['socialname'] ?>
               </a></td>

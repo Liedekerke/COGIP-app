@@ -1,3 +1,0 @@
-<?php
-include 'display.php';
-?>

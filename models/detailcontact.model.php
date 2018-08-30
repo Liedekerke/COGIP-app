@@ -13,4 +13,7 @@ if (isset($_GET['annuaire'])) {
   $displayDetailsPersonnes2->execute();
   $displayDetailsPersonnes3->execute();
 }
+
+// Ajout update - cookie
+
  ?>
