@@ -5,25 +5,42 @@
     <title></title>
   </head>
   <body>
-    <?php while ($donneeseven = $createcontac->fetch()) { ?>
-    <form class="" action="index.html" method="post">
-      <label for=""></label>
-      <input type="text" name="name" value="" required>
+
+    <form class="" action="" method="post">
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Firstname</th>
+          <th>Number</th>
+          <th>Email</th>
+          <th>Societe</th
+        </thead>
+        <tbody>
+      <td>
+        <label for=""></label>
+        <input type="text" name="name" value="" required>
+      </td>
       <br>
-      <label for=""></label>
-      <input type="text" name="firstname" value="" required>
+      <td>
+        <label for=""></label>
+        <input type="text" name="firstname" value="" required>
+      </td>
       <br>
-      <label for=""></label>
-      <input type="number" name="personnesphone" value="" required>
+      <td>
+        <label for=""></label>
+        <input type="number" name="personnesphone" value="" required>
+      </td>
       <br>
-      <label for=""></label>
-      <input type="email" name="email" value="" required>
+      <td>
+        <label for=""></label>
+        <input type="email" name="email" value="" required>
+      </td>
+
 
       <td>
         <select class="" name="idsociete" required>
-          <?php while ( $donnee2 = $displayDetailsFactures2->fetch() ) { ?>
-           <option value="<?php echo $donnee2['idsociete'] ?>" <?php testselect($donneeseven['idsociete'], $donnee2['idsociete']) ?>> <?php echo $donnee2['socialname'] ?> </option>
-         <?php } ?>
+          <?php while ( $donnee2 = $createcontact->fetch() ) { ?>
+           <option value="<?php echo $donnee2['idsociete'] ?>"> <?php echo $donnee2['socialname'] ?></option>
          <?php } ?>
         </select>
       </td>
@@ -31,6 +48,8 @@
       <td>
         <input type="submit" name="update" value="update">
       </td>
+    </tbody>
+    </table>
     </form>
   </body>
 </html>

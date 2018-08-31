@@ -84,10 +84,13 @@
                  <button type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
                </form>
             </td>
+
           </tr>
          <?php } ?>
+
         </tbody>
       </table>
+      <button type="button" name="create" value="create"><a href="?page=createcontact&createcontact">add</a></button>
     </div>
   </body>
 </html>
