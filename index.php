@@ -21,6 +21,9 @@
     case 'annuaire':
       require "controllers/annuaire.control.php";
       break;
+    case 'createcontact':
+      require "controllers/createcontact.control.php";
+      break;
     case 'clients':
       require "controllers/clients.control.php";
       break;
@@ -29,6 +32,9 @@
       break;
     case 'newfacture':
       require "controllers/createfacture.control.php";
+      break;
+    case 'newsociete':
+      require "controllers/createsociete.control.php";
       break;
     default:
       require "controllers/dashboard.control.php";
