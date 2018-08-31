@@ -9,12 +9,22 @@
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-    <title></title>
+    <title>COGIP - App</title>
   </head>
   <body>
   	<header>
-      <nav class="navbar is-light" role="navigation">
-        <div class="navbar-menu">
+      <nav class="navbar is-info" role="navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://fr.wikipedia.org/wiki/COGIP">
+            <img src="assets/img/board.png" alt="COGIP" width="50" height="28">
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" data-target="navMenu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
             <a class="navbar-item" href="?page=dashboard" title="">Dashboard</a>
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link" href="?page=societe" title="">Sociétés</a>

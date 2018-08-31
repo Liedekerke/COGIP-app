@@ -1,3 +1,37 @@
+body {
+	background-color: #F5F5F5;
+}
+
+main {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.navbar-item, .navbar-link {color: white;}
+
+.fa-user-lock {padding-left: 10px;}
+
+.tables {
+	padding: 20px;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+}
+
+th, td {padding: 10px;}
+
+th {
+	background-color: #F5F5F5;
+	text-transform: capitalize;
+}
+
+input {margin-left: 550px;}
+
+.subtitle {
+	text-align: center;
+}
 .hidden {
   display: none;
 }

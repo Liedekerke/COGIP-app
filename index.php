@@ -33,6 +33,9 @@
     case 'newfacture':
       require "controllers/createfacture.control.php";
       break;
+    case 'newsociete':
+      require "controllers/createsociete.control.php";
+      break;
     default:
       require "controllers/dashboard.control.php";
       break;
