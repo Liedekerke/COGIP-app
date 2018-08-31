@@ -1,5 +1,3 @@
-<?php include 'display.php' ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

@@ -1,7 +1,3 @@
-<?php
-include 'display.php';
-?>
-
 <!DOCTYPE html>
  <html lang="en" dir="ltr">
    <head>
@@ -14,11 +10,11 @@ include 'display.php';
          <th>name</th>
        </thead>
        <tbody>
-         <?php while ($dataCustomers = $displaySocietiesCustomers->fetch()) { ?>
+         <?php while ($dataSuppliers = $displaySocietiesSuppliers->fetch()) { ?>
            <tr>
-             <td><a href="detailsociete.php?societe=
-              <?php echo $dataCustomers['idsociete'] ?>">
-              <?php echo $dataCustomers['socialname'] ?>
+              <td><a href="?page=detailsociete&societe=
+              	<?php echo $dataSuppliers['idsociete'] ?>">
+              	<?php echo $dataSuppliers['socialname'] ?>
               </a></td>
            </tr>
          <?php } ?>

@@ -1,7 +1,3 @@
-<?php
-include 'display.php';
- ?>
-
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
    <head>
@@ -9,24 +5,30 @@ include 'display.php';
      <title></title>
    </head>
    <body>
+    <form action="" method="post">
      <table>
        <thead>
          <th>social name</th>
          <th>adresse</th>
          <th>phone</th>
          <th>tva</th>
-
-         <th>name</th>
-         <th>first name</th>
        </thead>
        <tbody>
          <?php while ($donneesixth = $displayDetailsSocieties->fetch()) { ?>
            <tr>
-             <td><?php echo $donneesixth['socialname'] //done?></td>
-             <td><?php echo $donneesixth['adresse'] //done?></td>
-             <td><?php echo $donneesixth['telephonesociete'] //done ?></td>
-             <td><?php echo $donneesixth['tvanumber'] // done ?></td>
-
+             <td>
+               <input type="text" name="socialname" value="<?php echo $donneesixth['socialname'] ?>">
+             </td>
+             <td>
+              <input type="text" name="adresse" value="<?php echo $donneesixth['adresse'] ?>">
+             </td>
+             <td>
+               <input type="number" name="telephonesociete" value="<?php echo $donneesixth['telephonesociete'] ?>">
+             </td>
+             <td>
+              <input type="number" name="tvanumber" value="<?php echo $donneesixth['tvanumber'] ?>">
+             </td>
+             <td><input type="submit" name="update" value="update"></td>
            </tr>
          <?php } ?>
        </tbody>
@@ -38,7 +40,7 @@ include 'display.php';
        <tbody>
          <?php while ($donneesixth2 = $displayDetailsSocieties3->fetch()) { ?>
            <tr>
-             <td><?php echo $donneesixth2['idfactures'] // done?></td>
+             <td><?php echo $donneesixth2['idfactures']?></td>
            </tr>
          <?php } ?>
        </tbody>
@@ -51,11 +53,12 @@ include 'display.php';
        <tbody>
          <?php while ($donneesixth3 = $displayDetailsSocieties2->fetch()) { ?>
            <tr>
-             <td><?php echo $donneesixth3['name'] //done ?></td>
-             <td><?php echo $donneesixth3['firstname'] //done ?></td>
+             <td><?php echo $donneesixth3['name']?></td>
+             <td><?php echo $donneesixth3['firstname']?></td>
            </tr>
          <?php } ?>
        </tbody>
      </table>
+    </form>
    </body>
  </html>

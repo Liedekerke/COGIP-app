@@ -1,7 +1,3 @@
-<?php
-include 'display.php';
- ?>
-
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
    <head>
@@ -16,7 +12,7 @@ include 'display.php';
        <tbody>
          <?php while ($donneefifth = $displaySocietiesAlphab->fetch()) { ?>
            <tr>
-             <td><a href="detailsociete.php?societe=<?php echo $donneefifth['idsociete'] ?>"><?php echo $donneefifth['socialstatus'] ?></a></td>
+             <td><a href="?page=detailsociete&societe=<?php echo $donneefifth['idsociete'] ?>"><?php echo $donneefifth['socialname'] ?></a></td>
            </tr>
          <?php } ?>
        </tbody>
