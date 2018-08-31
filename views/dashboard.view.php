@@ -24,7 +24,7 @@
              <td><a href="?page=detailsociete&societe=<?php echo $donnee['idsociete'] ?>"><?php echo $donnee['socialname'] ?></a></td>
              <td>
                <form class="" action="" method="post">
-                 <input type="hidden" name="iddelete" value="<?php echo $donneed['idfactures'] ?>">
+                 <input type="hidden" name="iddelete" value="<?php echo $donnee['idfactures'] ?>">
                  <button type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
                </form>
              </td>
@@ -52,7 +52,7 @@
               <td><?php echo $donneefourth['telephonesociete'] ?></td>
               <td>
                 <form class="" action="" method="post">
-                 <input type="hidden" name="iddelete" value="<?php echo $donneed2['idsociete'] ?>">
+                 <input type="hidden" name="iddelete" value="<?php echo $donnee2['idsociete'] ?>">
                  <button type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
                </form>
               </td>
@@ -60,6 +60,9 @@
           <?php } ?>
         </tbody>
       </table>
+      <form>
+        <input type="button" value="Nouvelle société" onclick="window.location.href='?page=newsociete'"/>
+      </form>
       <table>
         <thead>
           <th>id</th>
@@ -80,7 +83,7 @@
             <td><a href="?page=detailsociete&societe=<?php echo $donneethird['idsociete'] ?>"><?php echo $donneethird['socialname'] ?></a></td>
             <td>
               <form class="" action="" method="post">
-                 <input type="hidden" name="iddelete" value="<?php echo $donneed3['idpersonnes'] ?>">
+                 <input type="hidden" name="iddelete" value="<?php echo $donnee3['idpersonnes'] ?>">
                  <button type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
                </form>
             </td>

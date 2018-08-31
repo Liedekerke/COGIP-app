@@ -23,6 +23,7 @@
     $tvanumber = filter_var(filter_var($_POST['tvanumber'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT);
     $updateDetailsSociety->execute();
   }
+  
   $displayDetailsSocieties->execute();
   $displayDetailsSocieties2->execute();
   $displayDetailsSocieties3->execute();
