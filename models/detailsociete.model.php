@@ -17,10 +17,10 @@
   $id = $_GET['societe'];
 
   if(isset($_POST['update'])) {
-    $socialname = $_POST['socialname'];
-    $adresse = $_POST['adresse'];
-    $telephonesociete = $_POST['telephonesociete'];
-    $tvanumber = $_POST['tvanumber'];
+    $socialname = filter_var($_POST['socialname'], FILTER_SANITIZE_STRING);
+    $adresse = filter_var($_POST['adresse'], FILTER_SANITIZE_STRING);
+    $telephonesociete = filter_var(filter_var($_POST['telephonesociete'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT);
+    $tvanumber = filter_var(filter_var($_POST['tvanumber'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT);
     $updateDetailsSociety->execute();
   }
   $displayDetailsSocieties->execute();

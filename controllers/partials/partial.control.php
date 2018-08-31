@@ -2,9 +2,9 @@
 
 //common model
 /* Connect to a MySQL database using driver invocation */
-$dsn = getenv('DSN');
-$user = getenv('USER');
-$password = getenv('PASSWORD');
+$dsn = 'mysql:dbname=cgpi;host=127.0.0.1';
+$user = 'root';
+$password = '12345678';
 
 if (!isset($_GET['page'])) {
   $_GET['page'] = '';
@@ -16,10 +16,11 @@ function testselect($par1, $par2) {
   }
 }
 
-function delete($database) {
-  $deleteFacture = $dbh->prepare("DELETE FROM ".$database." WHERE idfactures = :idgeneral");
-  $deleteFacture->bindParam(':idgeneral', $param);
-  $param = $_POST['delete'];
+function delete($database, $param) {
+  global $dbh;
+  $deleteFacture = $dbh->prepare("DELETE FROM ".$database." WHERE ".$param." = :idgeneral");
+  $deleteFacture->bindParam(':idgeneral', $delete);
+  $delete = $_POST['iddelete'];
   $deleteFacture->execute();
 }
 

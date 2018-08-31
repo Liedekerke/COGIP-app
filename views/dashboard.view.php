@@ -88,9 +88,44 @@
                </form>
             </td>
           </tr>
+<<<<<<< HEAD
          <?php } ?>
         </tbody>
-      </table>   
+      </table>
+=======
+        <?php } ?>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>first name</th>
+        <th>phone number</th>
+        <th>email</th>
+        <th>nom de société</th>
+     <!--    <th>facture id</th> -->
+      </thead>
+      <tbody>
+        <?php while ($donneethird = $displayLatestPeople->fetch()) { ?>
+        <tr>
+          <td><?php echo $donneethird['idpersonnes'] ?></td>
+          <td><a href="?page=detailcontact&annuaire=<?php echo $donneethird['idpersonnes'] ?>"><?php echo $donneethird['name'] ?></a></td>
+          <td><?php echo $donneethird['firstname'] ?></td>
+          <td><?php echo $donneethird['personnesphone'] ?></td>
+          <td><?php echo $donneethird['email'] ?></td>
+          <td><a href="?page=detailsociete&societe=<?php echo $donneethird['idsociete'] ?>"><?php echo $donneethird['socialname'] ?></a></td>
+<!--            <td><?php echo $donneethird['idfactures'] ?></td>
+-->         </tr>
+       <?php } ?>
+      </tbody>
+    </table>
+    <div class="">
+      <a href="?page=fournisseurs">Fournisseurs</a>
+    </div>
+    <div class="">
+      <a href="?page=clients">Clients</a>
+>>>>>>> Nico
     </div>
   </body>
 </html>

@@ -10,7 +10,7 @@
              <td><?php echo $donnee['datefacture'] ?></td>
              <td>
                <form class="" action="" method="post">
-                 <input type="hidden" name="iddelete" value="<?php echo $donneed['idfactures'] ?>">
+                 <input type="hidden" name="iddelete" value="<?php echo $donnee['idfactures'] ?>">
                  <button type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
                </form>
              </td>
