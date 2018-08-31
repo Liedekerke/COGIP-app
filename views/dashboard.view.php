@@ -1,12 +1,9 @@
-    <section class="hero is-medium is-info is-bold">
+    <section class="hero is-small is-info is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
             Bienvenue sur votre dashboard
           </h1>
-          <h2 class="subtitle">
-            Ci-dessous, vos dernières données
-          </h2>
         </div>
       </div>
     </section>
@@ -55,8 +52,8 @@
               <td><?php echo $donneefourth['telephonesociete'] ?></td>
               <td>
                 <form class="" action="" method="post">
-                 <input type="hidden" name="iddelete2" value="<?php echo $donneed2['idsociete'] ?>">
-                 <button type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
+                 <input type="hidden" name="iddelete" value="<?php echo $donneed2['idsociete'] ?>">
+                 <button type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
                </form>
               </td>
             </tr>
@@ -83,8 +80,8 @@
             <td><a href="?page=detailsociete&societe=<?php echo $donneethird['idsociete'] ?>"><?php echo $donneethird['socialname'] ?></a></td>
             <td>
               <form class="" action="" method="post">
-                 <input type="hidden" name="iddelete3" value="<?php echo $donneed3['idpersonnes'] ?>">
-                 <button type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
+                 <input type="hidden" name="iddelete" value="<?php echo $donneed3['idpersonnes'] ?>">
+                 <button type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
                </form>
             </td>
           </tr>
