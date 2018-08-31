@@ -5,12 +5,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <link rel="stylesheet" href="assets/css/style.css"/>
     <meta charset="utf-8">
-    <title></title>
+    <title>COGIP - App</title>
   </head>
   <body>
   	<header>
-      <nav class="navbar is-light" role="navigation">
-        <div class="navbar-menu">
+      <nav class="navbar is-info" role="navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://fr.wikipedia.org/wiki/COGIP">
+            <img src="assets/img/board.png" alt="COGIP" width="50" height="28">
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" data-target="navMenu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
             <a class="navbar-item" href="?page=dashboard" title="">Dashboard</a>
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link" href="?page=societe" title="">Sociétés</a>
