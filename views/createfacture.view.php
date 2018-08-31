@@ -30,9 +30,6 @@
     </form>
     <script type="text/javascript">
       function test(){
-        // societe = document.forms[0].idsociete.value;
-        // index = 'test' + societe;
-        // selectToShow = document.getElementById(index);
         societe = $('#idsociete').val();
         index = '#test' + societe;
         selectToShow = $(index);
