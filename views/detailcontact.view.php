@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form action="" method="post">
-    <table>
+   <table>
       <thead>
         <th>nom</th>
         <th>prénom</th>

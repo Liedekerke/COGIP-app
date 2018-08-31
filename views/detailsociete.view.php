@@ -1,11 +1,4 @@
- <!DOCTYPE html>
- <html lang="en" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-     <title></title>
-   </head>
-   <body>
-    <form action="" method="post">
+   <form action="" method="post">
      <table>
        <thead>
          <th>social name</th>

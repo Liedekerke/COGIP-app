@@ -2,9 +2,9 @@
 
 //common model
 /* Connect to a MySQL database using driver invocation */
-$dsn = 'mysql:dbname=cgpi;host=127.0.0.1';
-$user = 'root';
-$password = '12345678';
+$dsn = getenv('DSN');
+$user = getenv('USER');
+$password = getenv('PASSWORD');
 
 if (!isset($_GET['page'])) {
   $_GET['page'] = '';
