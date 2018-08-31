@@ -18,6 +18,7 @@ main {
 .box {
 	display: flex;
 	flex-direction: column;
+	margin-top: 30px;
 }
 
 th, td {padding: 10px;}
@@ -27,11 +28,10 @@ th {
 	text-transform: capitalize;
 }
 
-input {margin-left: 550px;}
-
 .subtitle {
 	text-align: center;
 }
+
 .hidden {
   display: none;
 }
