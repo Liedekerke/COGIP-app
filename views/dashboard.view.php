@@ -76,7 +76,7 @@
           <?php while ($donneethird = $displayLatestPeople->fetch()) { ?>
           <tr>
             <td><?php echo $donneethird['idpersonnes'] ?></td>
-            <td><a href="detailcontact.php?annuaire=<?php echo $donneethird['idpersonnes'] ?>"><?php echo $donneethird['name'] ?></a></td>
+            <td><a href="?page=detailcontact&annuaire=<?php echo $donneethird['idpersonnes'] ?>"><?php echo $donneethird['name'] ?></a></td>
             <td><?php echo $donneethird['firstname'] ?></td>
             <td><?php echo $donneethird['personnesphone'] ?></td>
             <td><?php echo $donneethird['email'] ?></td>
