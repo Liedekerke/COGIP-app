@@ -1,11 +1,4 @@
- <!DOCTYPE html>
- <html lang="en" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-     <title></title>
-   </head>
-   <body>
-     <table>
+   <table>
        <thead>
          <th>name</th>
        </thead>
@@ -13,6 +6,12 @@
          <?php while ($donneefifth = $displaySocietiesAlphab->fetch()) { ?>
            <tr>
              <td><a href="?page=detailsociete&societe=<?php echo $donneefifth['idsociete'] ?>"><?php echo $donneefifth['socialname'] ?></a></td>
+             <td>
+               <form class="" action="" method="post">
+                 <input type="hidden" name="iddelete2" value="<?php echo $donneed2['idsociete'] ?>">
+                 <button type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
+               </form>
+             </td>
            </tr>
          <?php } ?>
        </tbody>

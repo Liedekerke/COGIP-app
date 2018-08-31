@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Annuaire</title>
-  </head>
-  <body>
     <table>
       <thead>
         <th>Annuaire</th>
@@ -14,6 +7,12 @@
           <tr>
             <td><a href="detailcontact.php?annuaire=<?php echo $donneeseven['idpersonnes'] ?>"><?php echo $donneeseven['name'] ?></a></td>
             <td><?php echo $donneeseven['firstname'] ?></td>
+            <td>
+              <form class="" action="" method="post">
+                 <input type="hidden" name="iddelete3" value="<?php echo $donneed3['idpersonnes'] ?>">
+                 <button type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
+               </form>
+            </td>
           </tr>
         <?php } ?>
       </tbody>
