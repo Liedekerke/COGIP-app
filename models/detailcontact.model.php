@@ -1,7 +1,7 @@
 <?php
 $displayDetailsPersonnes = $dbh->prepare('SELECT personnes.name, personnes.firstname, personnes.personnesphone, personnes.email FROM personnes WHERE personnes.idpersonnes = :idpersonnes');
 $displayDetailsPersonnes2 = $dbh->prepare('SELECT * FROM factures WHERE factures.idpersonnes = :idpersonnes');
-$displayDetailsPersonnes3 = $dbh->prepare('SELECT socialname, adresse FROM societe LEFT JOIN personnes ON societe.idsociete = personnes.idsociete WHERE personnes.idpersonnes = :idpersonnes');
+$displayDetailsPersonnes3 = $dbh->prepare('SELECT idsociete, socialname, adresse FROM societe LEFT JOIN personnes ON societe.idsociete = personnes.idsociete WHERE personnes.idpersonnes = :idpersonnes');
 
 $displayDetailsPersonnes->bindParam(':idpersonnes', $idpersonnes);
 $displayDetailsPersonnes2->bindParam(':idpersonnes', $idpersonnes);
