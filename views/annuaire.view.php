@@ -9,7 +9,7 @@
             <td><?php echo $donneeseven['firstname'] ?></td>
             <td>
               <form class="" action="" method="post">
-                 <input type="hidden" name="iddelete" value="<?php echo $donneed3['idpersonnes'] ?>">
+                 <input type="hidden" name="iddelete" value="<?php echo $donnee3['idpersonnes'] ?>">
                  <button type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
                </form>
             </td>

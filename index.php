@@ -27,6 +27,9 @@
     case 'fournisseurs':
       require "controllers/fournisseurs.control.php";
       break;
+    case 'newfacture':
+      require "controllers/createfacture.control.php";
+      break;
     default:
       require "controllers/dashboard.control.php";
       break;
