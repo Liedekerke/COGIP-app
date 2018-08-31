@@ -21,6 +21,9 @@
     case 'annuaire':
       require "controllers/annuaire.control.php";
       break;
+    case 'createcontact':
+      require "controllers/createcontact.control.php";
+      break;
     case 'clients':
       require "controllers/clients.control.php";
       break;
