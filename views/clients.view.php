@@ -8,7 +8,7 @@
              <td><a href="?page=detailsociete&societe=<?php echo $dataCustomers['idsociete'] ?>"><?php echo $dataCustomers['socialname'] ?>
               </a></td>
               <td>
-                <form class="" action="" method="post">
+                <form onsubmit="confirmation()" class="" action="" method="post">
                  <input type="hidden" name="iddelete" value="<?php echo $dataCustomers['idsociete'] ?>">
                  <button type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
                </form>
@@ -17,5 +17,3 @@
          <?php } ?>
        </tbody>
      </table>
-   </body>
- </html>

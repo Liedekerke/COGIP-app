@@ -51,4 +51,6 @@
       require "controllers/404.control.php";
       break;
   }
+
+  // require 'views/partials/footer.view.php';
  ?>

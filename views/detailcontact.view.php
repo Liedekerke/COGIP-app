@@ -57,5 +57,3 @@
       </tbody>
     </table>
   </form>
-  </body>
-</html>

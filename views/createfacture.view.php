@@ -38,5 +38,3 @@
         selectToShow.removeClass('hidden');
       }
     </script>
-  </body>
-</html>

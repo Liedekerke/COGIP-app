@@ -22,4 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function confirmation() {
+    if (!confirm('Confirmez la suppression de cet élement.')) {
+      event.returnValue=false;
+    }
+  }
+
 });
