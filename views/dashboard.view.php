@@ -1,4 +1,3 @@
-
   <section class="hero is-medium is-info">
     <div class="hero-body">
       <div class="container">
@@ -11,7 +10,7 @@
    <main>
       <div class="tables">
         <div class="box">
-          <h2 class="subtitle is-size-3 has-text-info has-text-weight-bold">Les dernières factures</h2>
+          <h2 class="subtitle is-size-3 has-text-weight-bold">Dernières factures encodées</h2>
           <table>
             <thead>
               <th>id</th>
@@ -30,7 +29,7 @@
                  <td>
                    <form onsubmit="confirmation()" class="" action="" method="post">
                      <input type="hidden" name="iddelete" value="<?php echo $donnee['idfactures'] ?>">
-                     <button class="button is-info" type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
+                     <button class="button is-link is-inverted" type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
                    </form>
                  </td>
                </tr>
@@ -38,9 +37,9 @@
             </tbody>
           </table>
         </div>
-        <button class="button is-info create" type="button" name="create"> <a href="?page=newfacture">Nouvelle facture</a> </button>
+        <button class="button create" type="button" name="create"> <a href="?page=newfacture">Nouvelle facture</a> </button>
         <div class="box">
-          <h2 class="subtitle is-size-3 has-text-info has-text-weight-bold">Les dernières sociétés</h2>
+          <h2 class="subtitle is-size-3 has-text-weight-bold">Dernières sociétés encodées</h2>
           <table>
             <thead>
               <th>id</th>
@@ -63,7 +62,7 @@
                   <td>
                     <form onsubmit="confirmation()" class="" action="" method="post">
                      <input type="hidden" name="iddelete" value="<?php echo $donneefourth['idsociete'] ?>">
-                     <button class="button is-info" type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
+                     <button class="button is-link is-inverted" type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
                    </form>
                   </td>
                 </tr>
@@ -71,9 +70,9 @@
             </tbody>
           </table>
         </div>
-        <button class="button is-info create" type="button" name="create"><a href="?page=newsociete">Nouvelle société</a></button>
+        <button class="button create" type="button" name="create"><a href="?page=newsociete">Nouvelle société</a></button>
         <div class="box">
-          <h2 class="subtitle is-size-3 has-text-info has-text-weight-bold">Les derniers contacts</h2>
+          <h2 class="subtitle is-size-3 has-text-weight-bold">Derniers contacts encodés</h2>
           <table>
             <thead>
               <th>id</th>
@@ -96,7 +95,7 @@
                 <td>
                   <form onsubmit="confirmation()" class="" action="" method="post">
                      <input type="hidden" name="iddelete" value="<?php echo $donneethird['idpersonnes'] ?>">
-                     <button class="button is-info" type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
+                     <button class="button is-link is-inverted" type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
                    </form>
                 </td>
               </tr>
@@ -104,6 +103,6 @@
             </tbody>
           </table>
         </div>
-        <button class="button is-info create" type="button" name="create" value="create"><a href="?page=createcontact&createcontact">Nouveau client</a></button>
+        <button class="button create" type="button" name="create" value="create"><a href="?page=createcontact&createcontact">Nouveau client</a></button>
       </div>
   </main>

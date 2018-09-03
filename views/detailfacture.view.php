@@ -1,5 +1,9 @@
- <form class="" action="" method="post">
+<div class="columns structure-pages">
+ <div class="column is-two-thirds is-offset-2">    
+    <div class="box">
+     <form class="" action="" method="post">
       <table>
+        <h2 class="subtitle is-size-3 has-text-weight-bold"> Modification facture</h2>
         <thead>
           <th>id</th>
           <th>date</th>
@@ -7,6 +11,7 @@
           <th>social name</th>
           <th>relation</th>
           <th>name</th>
+          <th></th>
         </thead>
         <tbody>
           <?php while ($donnee = $displayDetailsFactures->fetch()) { ?>
@@ -28,9 +33,14 @@
                  <?php } ?>
                 </select>
               </td>
-              <td> <input type="submit" name="update" value="update"> </td>
+              <td> 
+                <input class="button is-link" type="submit" name="update" value="update">
+              </td>
           <?php } ?>
         </tbody>
       </table>
-    </form>
-    <?php echo $message; ?>
+     </form>
+    </div>
+  </div>  
+</div> 
+<?php echo $message; ?>

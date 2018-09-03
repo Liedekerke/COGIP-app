@@ -1,6 +1,12 @@
+<div class="columns structure-pages">
+ <div class="column is-half is-offset-3">
+  <div class="box">
+    <h2 class="subtitle is-size-3 has-text-weight-bold">Annuaire</h2>  
     <table>
       <thead>
-        <th>Annuaire</th>
+        <th>Noms</th>
+        <th>Prénoms</th>
+        <th></th>
       </thead>
       <tbody>
         <?php while ($donneeseven = $displayAnnuaireAlphab->fetch()) { ?>
@@ -10,10 +16,13 @@
             <td>
               <form onsubmit="confirmation()" class="" action="" method="post">
                  <input type="hidden" name="iddelete" value="<?php echo $donneeseven['idpersonnes'] ?>">
-                 <button type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
+                 <button class="button is-link is-inverted" type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
                </form>
             </td>
           </tr>
         <?php } ?>
       </tbody>
     </table>
+  </div>
+ </div>
+</div>

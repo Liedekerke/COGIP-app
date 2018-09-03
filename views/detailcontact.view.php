@@ -1,60 +1,65 @@
-   <table>
-      <thead>
-        <th>nom</th>
-        <th>prénom</th>
-        <th>téléphone</th>
-        <th>email</th>
-      </thead>
-      <tbody>
-        <?php while ($donnee = $displayDetailsPersonnes->fetch()) { ?>
-          <tr>
-            <td>
-              <input type="text" name="name" value="<?php echo $donnee['personnesName'] ?>">
-            </td>
-            <td>
-              <input type="text" name="firstname" value="<?php echo $donnee['firstname'] ?>">
-            </td>
-            <td>
-              <input type="number" name="personnesphone" value="<?php echo $donnee['personnesphone'] ?>">
-            </td>
-            <td>
-              <input type="email" name="email" value="<?php echo $donnee['email'] ?>">
-            </td>
-             <td><input type="submit" name="update" value="update"></td>
-          </tr>
-        <?php } ?>
-      </tbody>
-    </table>
-    <?php echo $message; ?>
+<div class="columns structure-pages">
+ <div class="column is-half is-offset-3">    
+    <div class="box">
+    <form> 
+      <table>
+        <h2 class="subtitle is-size-3 has-text-weight-bold"> Modification contact</h2>
+          <thead>
+            <th>nom</th>
+            <th>prénom</th>
+            <th>téléphone</th>
+            <th>email</th>
+          </thead>
+          <tbody>
+            <?php while ($donnee = $displayDetailsPersonnes->fetch()) { ?>
+              <tr>
+                <td>
+                  <input type="text" name="name" value="<?php echo $donnee['personnesName'] ?>">
+                </td>
+                <td>
+                  <input type="text" name="firstname" value="<?php echo $donnee['firstname'] ?>">
+                </td>
+                <td>
+                  <input type="number" name="personnesphone" value="<?php echo $donnee['personnesphone'] ?>">
+                </td>
+                <td>
+                  <input type="email" name="email" value="<?php echo $donnee['email'] ?>">
+                </td>
+                 <td><input class="button is-link" type="submit" name="update" value="update"></td>
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+        <?php echo $message; ?>
 
-    <table>
-      <thead>
-        <th>social name</th>
-        <th>adresse</th>
-      </thead>
-      <tbody>
-        <?php while ($donnee3 = $displayDetailsPersonnes3->fetch()) { ?>
-          <tr>
-            <td><a href="?page=detailsociete&societe=<?php echo $donnee3['idsociete'] ?>"><?php echo $donnee3['socialname'] ?></a>
-            </td>
+        <table>
+          <thead>
+            <th>social name</th>
+            <th>adresse</th>
+          </thead>
+          <tbody>
+            <?php while ($donnee3 = $displayDetailsPersonnes3->fetch()) { ?>
+              <tr>
+                <td><a href="?page=detailsociete&societe=<?php echo $donnee3['idsociete'] ?>"><?php echo $donnee3['socialname'] ?></a>
+                </td>
 
-            <td><?php echo $donnee3['adresse']?></td>
-          </tr>
-        <?php } ?>
-      </tbody>
-    </table>
+                <td><?php echo $donnee3['adresse']?></td>
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
 
-    <table>
-      <thead>
-        <th>factures</th>
-      </thead>
-      <tbody>
-        <?php while ($donnee2 = $displayDetailsPersonnes2->fetch()) { ?>
-          <tr>
-            <td><a href="?page=detailfacture&factures=<?php echo $donnee2['idfactures'] ?>"><?php echo $donnee2['idfactures'] ?></a>
-            </td>
-          </tr>
-        <?php } ?>
-      </tbody>
-    </table>
-  </form>
+        <table>
+          <thead>
+            <th>factures</th>
+          </thead>
+          <tbody>
+            <?php while ($donnee2 = $displayDetailsPersonnes2->fetch()) { ?>
+              <tr>
+                <td><a href="?page=detailfacture&factures=<?php echo $donnee2['idfactures'] ?>"><?php echo $donnee2['idfactures'] ?></a>
+                </td>
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </form>

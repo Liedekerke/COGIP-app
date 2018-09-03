@@ -13,10 +13,10 @@
   </head>
   <body>
   	<header>
-      <nav class="navbar is-info" role="navigation">
+      <nav class="navbar is-fixed-top" role="navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://fr.wikipedia.org/wiki/COGIP">
-            <img src="assets/img/board.png" alt="COGIP" width="50" height="28">
+            <img src="assets/img/cogip.png" alt="COGIP" width="50" height="28">
           </a>
           <a role="button" class="navbar-burger" aria-label="menu" data-target="navMenu" aria-expanded="false">
             <span aria-hidden="true"></span>
@@ -29,15 +29,15 @@
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link" href="?page=societe" title="">Sociétés</a>
               <div class="navbar-dropdown is-boxed">
-                <a class="navabar-item" href="?page=societe">Toutes</a>
-                <a class="navabar-item" href="?page=fournisseurs">Fournisseurs</a>
-                <a class="navabar-item" href="?page=clients">Clients</a>
+                <a class="navbar-item" href="?page=societe">Toutes</a>
+                <a class="navbar-item" href="?page=fournisseurs">Fournisseurs</a>
+                <a class="navbar-item" href="?page=clients">Clients</a>
               </div>
             </div>
             <a class="navbar-item" href="?page=factures" title="">Factures</a>
             <a class="navbar-item" href="?page=annuaire" title="">Annuaire</a>
             <div class="navbar-end">
-              <a class="navbar-item" href="?page=">Login<i class="fas fa-user-lock"></i></a>
+              <a class="navbar-item" href="?page=">Logout<i class="fas fa-user-lock"></i></a>
             </div>
         </div>
       </nav>

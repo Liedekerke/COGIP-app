@@ -33,5 +33,5 @@ try {
     header('location:?page=login');
 }
 
-echo $dsn . $user . $password;
+// echo $dsn . $user . $password;
 ?>

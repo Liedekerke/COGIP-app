@@ -11,8 +11,6 @@ main {
 	background-color: #3a72a9;
 }
 
-.navbar-item, .navbar-link {color: white;}
-
 .fa-user-lock {padding-left: 10px;}
 
 .tables {
@@ -33,11 +31,17 @@ th {
 }
 
 .subtitle {
+	color: #3a72a9;
 	text-align: center;
 }
 
 .hidden {
   display: none;
+}
+
+.structure-pages {
+	padding-top: 80px;
+	padding-bottom: 300px;
 }
 
 form .columns {
