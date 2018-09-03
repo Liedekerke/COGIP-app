@@ -107,6 +107,3 @@
         <button class="button is-info create" type="button" name="create" value="create"><a href="?page=createcontact&createcontact">Nouveau client</a></button>
       </div>
   </main>
-  <script type="text/javascript" src="./assets/js/main.js"></script>
-  </body>
-  </html>

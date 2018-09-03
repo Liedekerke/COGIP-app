@@ -15,6 +15,7 @@
   $displayDetailsSocieties3->bindParam(':id', $id);
 
   $id = $_GET['societe'];
+  $message = '';
 
   if(isset($_POST['update'])) {
     $socialname = filter_var($_POST['socialname'], FILTER_SANITIZE_STRING);
@@ -22,8 +23,9 @@
     $telephonesociete = filter_var(filter_var($_POST['telephonesociete'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT);
     $tvanumber = filter_var(filter_var($_POST['tvanumber'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT);
     $updateDetailsSociety->execute();
+    $message = 'société modifiée avec succès.';
   }
-  
+
   $displayDetailsSocieties->execute();
   $displayDetailsSocieties2->execute();
   $displayDetailsSocieties3->execute();

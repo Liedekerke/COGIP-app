@@ -8,12 +8,15 @@ $createfacture->bindParam(':prestationmotif', $prestationmotif);
 $createfacture->bindParam(':idsociete', $idsociete);
 $createfacture->bindParam(':idpersonnes', $idpersonnes);
 
+$message = '';
+
 if (isset($_POST['submit'])) {
   $datefacture = $_POST['datefacture'];
   $prestationmotif = filter_var($_POST['prestationmotif'], FILTER_SANITIZE_STRING);
   $idsociete = $_POST['idsociete'];
   $idpersonnes = $_POST['idpersonnes'][$idsociete -1];
   $createfacture->execute();
+  $message = 'Facture ajoutée avec succès.';
 }
 
 $donnee2 = $personneslist->fetchAll();

@@ -52,5 +52,5 @@
       break;
   }
 
-  // require 'views/partials/footer.view.php';
+  require 'views/partials/footer.view.php';
  ?>

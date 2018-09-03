@@ -31,3 +31,4 @@
       <br>
       <input type="submit" name="createsociete" value="ajout">
     </form>
+    <?php echo $message; ?>

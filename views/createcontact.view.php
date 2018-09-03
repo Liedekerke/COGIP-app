@@ -50,4 +50,5 @@
       </td>
     </tbody>
     </table>
+    <?php echo $message; ?>
     </form>

@@ -2,7 +2,7 @@
 require "controllers/partials/partial.control.php";
 
 if (isset($_POST['delete'])) {
-  // delete("factures", "idfactures");
+  delete("factures", "idfactures");
 }
 if (isset($_POST['delete2'])) {
   delete("societe", "idsociete");

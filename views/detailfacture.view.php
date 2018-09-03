@@ -33,3 +33,4 @@
         </tbody>
       </table>
     </form>
+    <?php echo $message; ?>

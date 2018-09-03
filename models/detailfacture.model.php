@@ -11,6 +11,7 @@
   $displayDetailsFactures3 = $dbh->query("SELECT idpersonnes, name, firstname FROM personnes");
 
   $idfactures = $_GET['factures'];
+  $message = '';
 
   if (isset($_POST['update'])) {
     $datefacture = $_POST['datefacture'];
@@ -18,6 +19,7 @@
     $idsociete = $_POST['idsociete'];
     $idpersonnes = $_POST['idpersonnes'];
     $updateDetailFacture->execute();
+    $message = 'facture modifiée avec succès';
   }
   $displayDetailsFactures->execute();
 
