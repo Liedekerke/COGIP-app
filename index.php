@@ -39,6 +39,10 @@
     case 'dashboard':
       require "controllers/dashboard.control.php";
       break;
+    case '':
+    case 'login':
+      require "controllers/login.control.php";
+      break;
     default:
       require "controllers/404.control.php";
       break;

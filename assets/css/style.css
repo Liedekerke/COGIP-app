@@ -7,6 +7,10 @@ main {
 	margin-right: 40px;
 }
 
+.hero-body {
+	background-color: #3a72a9;
+}
+
 .navbar-item, .navbar-link {color: white;}
 
 .fa-user-lock {padding-left: 10px;}
@@ -35,3 +39,11 @@ th {
 .hidden {
   display: none;
 }
+
+form .columns {
+	margin-top: 200px;
+}
+
+form .columns .field {padding-top: 20px;}
+
+

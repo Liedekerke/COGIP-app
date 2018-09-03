@@ -2,7 +2,7 @@
   <section class="hero is-medium is-info">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
+        <h1 class="title has-text-centered">
           Bienvenue sur votre dashboard
         </h1>
       </div>
