@@ -44,6 +44,7 @@
       break;
     case '':
     case 'login':
+    case 'logintrue':
       require "controllers/login.control.php";
       break;
     default:

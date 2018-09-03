@@ -24,8 +24,8 @@
 		</div>
 		<div class="field">
 		  <p class="control">
-		    <button class="button is-info is-large" name="submit" value="submit">
-		      Login
+		    <button class="button is-info is-large" name="<?php echo $buttonvalue; ?>" value="submit">
+		      <?php echo $buttontext; ?>
 		    </button>
 		  </p>
       <?php echo $errormessage; ?>

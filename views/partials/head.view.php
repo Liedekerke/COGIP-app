@@ -37,7 +37,7 @@
             <a class="navbar-item" href="?page=factures" title="">Factures</a>
             <a class="navbar-item" href="?page=annuaire" title="">Annuaire</a>
             <div class="navbar-end">
-              <a class="navbar-item" href="">Login<i class="fas fa-user-lock"></i></a>
+              <a class="navbar-item" href="?page=logintrue">Logout<i class="fas fa-user-lock"></i></a>
             </div>
         </div>
       </nav>

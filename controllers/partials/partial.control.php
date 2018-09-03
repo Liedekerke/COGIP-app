@@ -29,6 +29,7 @@ try {
 
     } catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
+    session_destroy();
     header('location:?page=login');
 }
 
