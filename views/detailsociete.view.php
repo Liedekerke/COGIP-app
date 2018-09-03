@@ -33,7 +33,7 @@
        <tbody>
          <?php while ($donneesixth2 = $displayDetailsSocieties3->fetch()) { ?>
            <tr>
-             <td><?php echo $donneesixth2['idfactures']?></td>
+             <td> <a href="?page=detailfacture&factures=<?php echo $donneesixth2['idfactures'] ?>"><?php echo $donneesixth2['idfactures']?></a></td>
            </tr>
          <?php } ?>
        </tbody>
@@ -46,7 +46,7 @@
        <tbody>
          <?php while ($donneesixth3 = $displayDetailsSocieties2->fetch()) { ?>
            <tr>
-             <td><?php echo $donneesixth3['name']?></td>
+             <td><a href="?page=detailcontact&annuaire=<?php echo $donneesixth3['idpersonnes'] ?>"><?php echo $donneesixth3['name']?></a></td>
              <td><?php echo $donneesixth3['firstname']?></td>
            </tr>
          <?php } ?>

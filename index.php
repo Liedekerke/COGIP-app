@@ -36,8 +36,11 @@
     case 'newsociete':
       require "controllers/createsociete.control.php";
       break;
-    default:
+    case 'dashboard':
       require "controllers/dashboard.control.php";
+      break;
+    default:
+      require "controllers/404.control.php";
       break;
   }
  ?>

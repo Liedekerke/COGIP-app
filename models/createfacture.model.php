@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
   $prestationmotif = filter_var($_POST['prestationmotif'], FILTER_SANITIZE_STRING);
   $idsociete = $_POST['idsociete'];
   $idpersonnes = $_POST['idpersonnes'][$idsociete -1];
+  $createfacture->execute();
 }
 
 $donnee2 = $personneslist->fetchAll();

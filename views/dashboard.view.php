@@ -62,7 +62,7 @@
                   <td><?php echo $donneefourth['telephonesociete'] ?></td>
                   <td>
                     <form class="" action="" method="post">
-                     <input type="hidden" name="iddelete" value="<?php echo $donnee2['idsociete'] ?>">
+                     <input type="hidden" name="iddelete" value="<?php echo $donneefourth['idsociete'] ?>">
                      <button class="button is-info" type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
                    </form>
                   </td>
@@ -95,7 +95,7 @@
                 <td><a href="?page=detailsociete&societe=<?php echo $donneethird['idsociete'] ?>"><?php echo $donneethird['socialname'] ?></a></td>
                 <td>
                   <form class="" action="" method="post">
-                     <input type="hidden" name="iddelete" value="<?php echo $donnee3['idpersonnes'] ?>">
+                     <input type="hidden" name="iddelete" value="<?php echo $donneethird['idpersonnes'] ?>">
                      <button class="button is-info" type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
                    </form>
                 </td>

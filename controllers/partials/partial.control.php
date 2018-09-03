@@ -34,4 +34,5 @@ try {
     echo 'Connection failed: ' . $e->getMessage();
 }
 
+echo $dsn . $user . $password;
 ?>
