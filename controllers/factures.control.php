@@ -1,4 +1,5 @@
 <?php
+require "controllers/partials/partial.control.php";
 
 if (isset($_POST['delete'])) {
   delete("factures", "idfactures");

@@ -1,17 +1,14 @@
 <?php
-
+session_start();
 //common model
 /* Connect to a MySQL database using driver invocation */
 $dsn = getenv('DSN');
-$user = getenv('USER');
-$password = getenv('PASSWORD');
+$user = $_SESSION['username'];
+$password = $_SESSION['password'];
 // $dsn = 'mysql:dbname=cgpi;host=127.0.0.1';
 // $user ='root';
 // $password ='12345678';
 
-if (!isset($_GET['page'])) {
-  $_GET['page'] = '';
-}
 
 function testselect($par1, $par2) {
   if ($par1 == $par2) {
@@ -32,6 +29,7 @@ try {
 
     } catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
+    header('location:?page=login');
 }
 
 echo $dsn . $user . $password;
