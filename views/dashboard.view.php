@@ -28,7 +28,7 @@
                  <td><?php echo $donnee['prestationmotif'] ?></td>
                  <td><a href="?page=detailsociete&societe=<?php echo $donnee['idsociete'] ?>"><?php echo $donnee['socialname'] ?></a></td>
                  <td>
-                   <form class="" action="" method="post">
+                   <form onsubmit="confirmation()" class="" action="" method="post">
                      <input type="hidden" name="iddelete" value="<?php echo $donnee['idfactures'] ?>">
                      <button class="button is-info" type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
                    </form>
@@ -61,7 +61,7 @@
                   <td><?php echo $donneefourth['tvanumber'] ?></td>
                   <td><?php echo $donneefourth['telephonesociete'] ?></td>
                   <td>
-                    <form class="" action="" method="post">
+                    <form onsubmit="confirmation()" class="" action="" method="post">
                      <input type="hidden" name="iddelete" value="<?php echo $donneefourth['idsociete'] ?>">
                      <button class="button is-info" type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
                    </form>
@@ -94,7 +94,7 @@
                 <td><?php echo $donneethird['email'] ?></td>
                 <td><a href="?page=detailsociete&societe=<?php echo $donneethird['idsociete'] ?>"><?php echo $donneethird['socialname'] ?></a></td>
                 <td>
-                  <form class="" action="" method="post">
+                  <form onsubmit="confirmation()" class="" action="" method="post">
                      <input type="hidden" name="iddelete" value="<?php echo $donneethird['idpersonnes'] ?>">
                      <button class="button is-info" type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
                    </form>
@@ -107,6 +107,3 @@
         <button class="button is-info create" type="button" name="create" value="create"><a href="?page=createcontact&createcontact">Nouveau client</a></button>
       </div>
   </main>
-  <script type="text/javascript" src="./assets/js/main.js"></script>
-  </body>
-</html>

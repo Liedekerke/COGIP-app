@@ -20,6 +20,7 @@ $createType->bindParam(':type', $type);
 $createType->bindParam(':relation', $relation);
 $createType->bindParam(':idsociete', $idsociete3);
 
+$message = '';
 
 if(isset($_POST['createsociete'])) {
     $socialname = filter_var($_POST['socialname'], FILTER_SANITIZE_STRING);
@@ -34,6 +35,7 @@ if(isset($_POST['createsociete'])) {
     $idsociete3 = $idsociete2 + 1;
    	$createSociete->execute();
 	  $createType->execute();
+    $message = 'société ajoutée avec succès.';
   }
 
 

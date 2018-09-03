@@ -9,7 +9,7 @@
         <?php while ($donnee = $displayDetailsPersonnes->fetch()) { ?>
           <tr>
             <td>
-              <input type="text" name="name" value="<?php echo $donnee['name'] ?>">
+              <input type="text" name="name" value="<?php echo $donnee['personnesName'] ?>">
             </td>
             <td>
               <input type="text" name="firstname" value="<?php echo $donnee['firstname'] ?>">
@@ -25,6 +25,7 @@
         <?php } ?>
       </tbody>
     </table>
+    <?php echo $message; ?>
 
     <table>
       <thead>
@@ -57,5 +58,3 @@
       </tbody>
     </table>
   </form>
-  </body>
-</html>

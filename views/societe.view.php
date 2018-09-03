@@ -7,7 +7,7 @@
            <tr>
              <td><a href="?page=detailsociete&societe=<?php echo $donneefifth['idsociete'] ?>"><?php echo $donneefifth['socialname'] ?></a></td>
              <td>
-               <form class="" action="" method="post">
+               <form onsubmit="confirmation()" class="" action="" method="post">
                  <input type="hidden" name="iddelete" value="<?php echo $donneefifth['idsociete'] ?>">
                  <button type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
                </form>
@@ -16,5 +16,3 @@
          <?php } ?>
        </tbody>
      </table>
-   </body>
- </html>

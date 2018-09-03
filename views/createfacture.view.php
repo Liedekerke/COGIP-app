@@ -28,6 +28,7 @@
          <br>
       <input type="submit" name="submit" value="submit">
     </form>
+    <?php echo $message; ?>
     <script type="text/javascript">
       function test(){
         societe = $('#idsociete').val();
@@ -38,5 +39,3 @@
         selectToShow.removeClass('hidden');
       }
     </script>
-  </body>
-</html>
