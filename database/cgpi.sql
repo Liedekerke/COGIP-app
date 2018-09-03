@@ -2,14 +2,12 @@
 -- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 29, 2018 at 02:47 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Host: localhost:8889
+-- Generation Time: Sep 03, 2018 at 12:42 PM
+-- Server version: 5.7.21
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -136,10 +134,11 @@ CREATE TABLE `societe` (
 INSERT INTO `societe` (`idsociete`, `socialname`, `adresse`, `country`, `tvanumber`, `telephonesociete`) VALUES
 (1, 'Codokies ', 'Rue des biscuits, 1. 1210 Bruxelles', 'Belgium', 128, 2228228),
 (2, 'Guillaume le Grand', 'Avenue des Empereurs, 780. 100 Bruxelles', 'Belgium', 666, 6669870),
-(3, 'CharlotÔbel', 'Rue Alfred Cluysenaar, 50. 1060 Saint-Gilles', 'Belgium', 214, 32287284),
+(3, 'Cluys', 'Rue Alfred Cluysenaar, 50. 1060 Saint-Gilles', 'Belgium', 214, 32287284),
 (4, 'Funito', 'Rue du gras, 89. 1040 Bruxelles', 'Belgium', 8, 920875310),
 (5, 'Choune', 'Rue de la chienne, 69. 1060 Bruxelles', 'Belgium', 906, 69875110),
-(6, 'Streamify', 'Rue de l\'écoutille, 21. 1000 Bruxelles', 'Belgium', 867, 48763871);
+(6, 'Streamify', 'Rue de l\'écoutille, 22. 1000 Bruxelles', 'Belgium', 867, 48763871),
+(10, 'TheHundreds', 'Rue du centenaire, 100. 1000 Bruxelles', 'Belgium', 100, 22100499);
 
 -- --------------------------------------------------------
 
@@ -164,7 +163,8 @@ INSERT INTO `type` (`idtype`, `type`, `relation`, `idsociete`) VALUES
 (3, 'SA', 'fournisseur', 3),
 (4, 'ASBL', 'client', 4),
 (5, 'SPRL', 'fournisseur', 5),
-(6, 'SA', 'client', 6);
+(6, 'SA', 'client', 6),
+(22, 'SPRL', 'fournisseur', 10);
 
 --
 -- Indexes for dumped tables
@@ -243,13 +243,13 @@ ALTER TABLE `personnes`
 -- AUTO_INCREMENT for table `societe`
 --
 ALTER TABLE `societe`
-  MODIFY `idsociete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idsociete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `type`
 --
 ALTER TABLE `type`
-  MODIFY `idtype` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idtype` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables
@@ -279,7 +279,6 @@ ALTER TABLE `personnes`
 --
 ALTER TABLE `type`
   ADD CONSTRAINT `type_ibfk_1` FOREIGN KEY (`idsociete`) REFERENCES `societe` (`idsociete`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
