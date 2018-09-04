@@ -42,6 +42,9 @@
     case 'dashboard':
       require "controllers/dashboard.control.php";
       break;
+    case 'onlineusers':
+      require "controllers/user.control.php";
+      break;
     case '':
     case 'login':
     case 'logintrue':

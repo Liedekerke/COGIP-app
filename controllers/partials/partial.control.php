@@ -26,6 +26,9 @@ function delete($database, $param) {
 
 try {
     $dbh = new PDO($dsn, $user, $password);
+    $test = $dbh->query('SET ROLE iddqd');
+    $test2 = $dbh->query('SET ROLE modo');
+    $test3 = $dbh->query('SET ROLE guest');
 
     } catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
