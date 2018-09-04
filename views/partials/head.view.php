@@ -15,7 +15,7 @@
   	<header>
       <nav class="navbar is-fixed-top" role="navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://fr.wikipedia.org/wiki/COGIP">
+          <a class="navbar-item" href="?page=dashboard">
             <img src="assets/img/cogip.png" alt="COGIP" width="50" height="28">
           </a>
           <a role="button" class="navbar-burger" aria-label="menu" data-target="navMenu" aria-expanded="false">
@@ -36,6 +36,7 @@
             </div>
             <a class="navbar-item" href="?page=factures" title="">Factures</a>
             <a class="navbar-item" href="?page=annuaire" title="">Annuaire</a>
+            <a class="navbar-item" href="?page=onlineusers" title="">Utilisateurs</a>
             <div class="navbar-end">
               <a class="navbar-item" href="?page=">Logout<i class="fas fa-user-lock"></i></a>
             </div>
