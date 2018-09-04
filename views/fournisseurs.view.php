@@ -16,7 +16,7 @@
                 <td>
                   <form onsubmit="confirmation()" class="" action="" method="post">
                    <input class="button is-link is-inverted" type="hidden" name="iddelete" value="<?php echo $dataSuppliers['idsociete'] ?>">
-                   <button class="button is-link is-inverted" type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
+                   <button class="button is-link is-inverted" type="submit" name="delete2" <?php sessionCheckDelUpd() ?>><i class="fas fa-trash-alt"></i></button>
                  </form>
                 </td>
              </tr>

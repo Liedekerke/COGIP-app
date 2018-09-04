@@ -1,5 +1,5 @@
 <div class="columns structure-pages">
- <div class="column is-8 is-offset-2">    
+ <div class="column is-8 is-offset-2">
     <div class="box">
        <form action="" method="post">
          <table>
@@ -26,7 +26,7 @@
                  <td>
                   <input class="input is-link is-rounded" type="number" name="tvanumber" value="<?php echo $donneesixth['tvanumber'] ?>">
                  </td>
-                 <td><input class="button is-link is-rounded" type="submit" name="update" value="update"></td>
+                 <td><input class="button is-link is-rounded" type="submit" name="update" value="update" <?php sessionCheckDelUpd() ?>></td>
                </tr>
              <?php } ?>
            </tbody>

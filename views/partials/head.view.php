@@ -38,7 +38,7 @@
             <a class="navbar-item" href="?page=annuaire" title="">Annuaire</a>
             <a class="navbar-item" href="?page=onlineusers" title="">Utilisateurs</a>
             <div class="navbar-end">
-              <a class="navbar-item" href="?page=">Logout<i class="fas fa-user-lock"></i></a>
+              <a class="navbar-item" href="?page=logintrue">Logout<i class="fas fa-user-lock"></i></a>
             </div>
         </div>
       </nav>

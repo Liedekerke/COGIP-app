@@ -1,5 +1,7 @@
 <?php
-require "controllers/partials/partial.control.php";
+  session_start();
+  require "controllers/partials/partial.control.php";
+  sessionCheck();
 
 if (isset($_POST['delete'])) {
   delete("factures", "idfactures");

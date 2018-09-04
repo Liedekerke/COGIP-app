@@ -45,3 +45,7 @@ th {
 }
 
 .login {margin-top: 100px;}
+
+.disabled {
+	pointer-events: none;
+}

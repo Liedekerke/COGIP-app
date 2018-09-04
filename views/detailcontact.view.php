@@ -1,5 +1,5 @@
 <div class="columns structure-pages">
- <div class="column is-10 is-offset-1">    
+ <div class="column is-10 is-offset-1">
     <div class="box">
       <form class="" action="" method="post">
         <table>
@@ -54,7 +54,7 @@
               <?php } ?>
             </tbody>
           </table>
-          <input class="button is-link is-rounded is-pulled-right" type="submit" name="update" value="update">
+          <input class="button is-link is-rounded is-pulled-right" type="submit" name="update" value="update" <?php sessionCheckDelUpd() ?>>
         </form>
       </div>
     </div>

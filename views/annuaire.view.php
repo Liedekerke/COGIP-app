@@ -1,7 +1,7 @@
 <div class="columns structure-pages">
  <div class="column is-half is-offset-3">
   <div class="box">
-    <h2 class="subtitle is-size-3 has-text-weight-bold">Annuaire</h2>  
+    <h2 class="subtitle is-size-3 has-text-weight-bold">Annuaire</h2>
     <table>
       <thead>
         <th>Noms</th>
@@ -16,7 +16,7 @@
             <td>
               <form onsubmit="confirmation()" class="" action="" method="post">
                  <input type="hidden" name="iddelete" value="<?php echo $donneeseven['idpersonnes'] ?>">
-                 <button class="button is-link is-inverted" type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
+                 <button class="button is-link is-inverted" type="submit" name="delete3" <?php sessionCheckDelUpd() ?>><i class="fas fa-trash-alt"></i></button>
                </form>
             </td>
           </tr>

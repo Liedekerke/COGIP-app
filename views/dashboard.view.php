@@ -29,7 +29,7 @@
                  <td>
                    <form onsubmit="confirmation()" class="" action="" method="post">
                      <input type="hidden" name="iddelete" value="<?php echo $donnee['idfactures'] ?>">
-                     <button class="button is-link is-inverted" type="submit" name="delete"><i class="fas fa-trash-alt"></i></button>
+                     <button class="button is-link is-inverted" type="submit" name="delete" <?php sessionCheckDelUpd() ?>><i class="fas fa-trash-alt"></i></button>
                    </form>
                  </td>
                </tr>
@@ -37,7 +37,7 @@
             </tbody>
           </table>
         </div>
-        <button class="button create is-rounded" type="button" name="create"> <a href="?page=newfacture">Nouvelle facture</a> </button>
+        <a class="button create is-rounded <?php sessionCheckAdd() ?>" <?php sessionCheckAdd() ?> href="?page=newfacture">Nouvelle facture</a>
         <div class="box">
           <h2 class="subtitle is-size-3 has-text-weight-bold">Dernières sociétés encodées</h2>
           <table>
@@ -62,7 +62,7 @@
                   <td>
                     <form onsubmit="confirmation()" class="" action="" method="post">
                      <input type="hidden" name="iddelete" value="<?php echo $donneefourth['idsociete'] ?>">
-                     <button class="button is-link is-inverted" type="submit" name="delete2"><i class="fas fa-trash-alt"></i></button>
+                     <button class="button is-link is-inverted" type="submit" name="delete2" <?php sessionCheckDelUpd() ?>><i class="fas fa-trash-alt"></i></button>
                    </form>
                   </td>
                 </tr>
@@ -70,7 +70,7 @@
             </tbody>
           </table>
         </div>
-        <button class="button create is-rounded" type="button" name="create"><a href="?page=newsociete">Nouvelle société</a></button>
+        <a class="button create is-rounded <?php sessionCheckAdd() ?>" <?php sessionCheckAdd() ?> href="?page=newsociete">Nouvelle société</a>
         <div class="box">
           <h2 class="subtitle is-size-3 has-text-weight-bold">Derniers contacts encodés</h2>
           <table>
@@ -95,7 +95,7 @@
                 <td>
                   <form onsubmit="confirmation()" class="" action="" method="post">
                      <input type="hidden" name="iddelete" value="<?php echo $donneethird['idpersonnes'] ?>">
-                     <button class="button is-link is-inverted" type="submit" name="delete3"><i class="fas fa-trash-alt"></i></button>
+                     <button class="button is-link is-inverted" type="submit" name="delete3" <?php sessionCheckDelUpd() ?>><i class="fas fa-trash-alt"></i></button>
                    </form>
                 </td>
               </tr>
@@ -103,6 +103,6 @@
             </tbody>
           </table>
         </div>
-        <button class="button create is-rounded" type="button" name="create" value="create"><a href="?page=createcontact&createcontact">Nouveau client</a></button>
+        <a class="button create is-rounded <?php sessionCheckAdd() ?>" <?php sessionCheckAdd() ?> href="?page=createcontact&createcontact">Nouveau client</a>
       </div>
   </main>
