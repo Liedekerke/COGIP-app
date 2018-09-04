@@ -16,7 +16,7 @@
         <tbody>
           <?php while ($donnee = $displayDetailsFactures->fetch()) { ?>
               <td><?php echo $donnee['idfactures'] ?></td>
-              <td><input type="date" name="datefacture" value="<?php echo $donnee['datefacture'] ?>"></td>
+              <td><input class="button" type="date" name="datefacture" value="<?php echo $donnee['datefacture'] ?>"></td>
               <td><input type="text" name="prestationmotif" value="<?php echo $donnee['prestationmotif'] ?>"> </td>
               <td>
                 <select class="" name="idsociete">
