@@ -1,5 +1,5 @@
 <div class="columns structure-pages">
- <div class="column is-three-fifths is-offset-2">    
+ <div class="column is-8 is-offset-2">    
     <div class="box">
        <form action="" method="post">
          <table>
@@ -15,18 +15,18 @@
              <?php while ($donneesixth = $displayDetailsSocieties->fetch()) { ?>
                <tr>
                  <td>
-                   <input type="text" name="socialname" value="<?php echo $donneesixth['socialname'] ?>">
+                   <input class="input is-link is-rounded" type="text" name="socialname" value="<?php echo $donneesixth['socialname'] ?>">
                  </td>
                  <td>
-                  <input type="text" name="adresse" value="<?php echo $donneesixth['adresse'] ?>">
+                  <input class="input is-link is-rounded" type="text" name="adresse" value="<?php echo $donneesixth['adresse'] ?>">
                  </td>
                  <td>
-                   <input type="number" name="telephonesociete" value="<?php echo $donneesixth['telephonesociete'] ?>">
+                   <input class="input is-link is-rounded" type="number" name="telephonesociete" value="<?php echo $donneesixth['telephonesociete'] ?>">
                  </td>
                  <td>
-                  <input type="number" name="tvanumber" value="<?php echo $donneesixth['tvanumber'] ?>">
+                  <input class="input is-link is-rounded" type="number" name="tvanumber" value="<?php echo $donneesixth['tvanumber'] ?>">
                  </td>
-                 <td><input class="button is-link" type="submit" name="update" value="update"></td>
+                 <td><input class="button is-link is-rounded" type="submit" name="update" value="update"></td>
                </tr>
              <?php } ?>
            </tbody>

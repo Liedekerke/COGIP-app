@@ -1,8 +1,8 @@
   <section class="hero is-medium is-info">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title has-text-centered">
-          Bienvenue sur votre dashboard
+        <h1 class="title is-2 has-text-centered has-text-white-ter">
+          <em>Bienvenue sur votre dashboard</em>
         </h1>
       </div>
     </div>
@@ -37,7 +37,7 @@
             </tbody>
           </table>
         </div>
-        <button class="button create" type="button" name="create"> <a href="?page=newfacture">Nouvelle facture</a> </button>
+        <button class="button create is-rounded" type="button" name="create"> <a href="?page=newfacture">Nouvelle facture</a> </button>
         <div class="box">
           <h2 class="subtitle is-size-3 has-text-weight-bold">Dernières sociétés encodées</h2>
           <table>
@@ -70,7 +70,7 @@
             </tbody>
           </table>
         </div>
-        <button class="button create" type="button" name="create"><a href="?page=newsociete">Nouvelle société</a></button>
+        <button class="button create is-rounded" type="button" name="create"><a href="?page=newsociete">Nouvelle société</a></button>
         <div class="box">
           <h2 class="subtitle is-size-3 has-text-weight-bold">Derniers contacts encodés</h2>
           <table>
@@ -103,6 +103,6 @@
             </tbody>
           </table>
         </div>
-        <button class="button create" type="button" name="create" value="create"><a href="?page=createcontact&createcontact">Nouveau client</a></button>
+        <button class="button create is-rounded" type="button" name="create" value="create"><a href="?page=createcontact&createcontact">Nouveau client</a></button>
       </div>
   </main>

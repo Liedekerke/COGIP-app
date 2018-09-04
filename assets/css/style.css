@@ -40,15 +40,8 @@ th {
 }
 
 .structure-pages {
-	padding-top: 80px;
-	padding-bottom: 300px;
+	padding-top: 100px;
+	padding-bottom: 400px;
 }
 
-form .columns {
-	margin-top: 200px;
-	margin-bottom: 200px;
-}
-
-form .columns .field {padding-top: 20px;}
-
-
+.login {margin-top: 100px;}

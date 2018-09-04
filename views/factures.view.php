@@ -1,6 +1,5 @@
 <div class="columns structure-pages">
- <div class="column is-3"></div>
- <div class="column is-half">
+ <div class="column is-half is-offset-3">
   <div class="box">  
    <table>
        <h2 class="subtitle is-size-3 has-text-weight-bold">Factures</h2>
