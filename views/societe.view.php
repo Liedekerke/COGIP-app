@@ -4,7 +4,7 @@
    <table>
       <h2 class="subtitle is-size-3 has-text-weight-bold"> Sociétés</h2>
        <thead>
-         <th>name</th>
+         <th>nom</th>
          <th></th>
        </thead>
        <tbody>
@@ -22,5 +22,6 @@
        </tbody>
      </table>
     </div>
+    <a class="button create is-rounded <?php sessionCheckAdd() ?>" <?php sessionCheckAdd() ?> href="?page=newsociete">Nouvelle société</a>
   </div>
 </div>

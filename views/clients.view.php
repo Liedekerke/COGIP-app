@@ -4,7 +4,7 @@
      <table>
       <h2 class="subtitle is-size-3 has-text-weight-bold"> Sociétés-clients</h2>
        <thead>
-         <th>name</th>
+         <th>Nom</th>
          <th></th>
        </thead>
        <tbody>

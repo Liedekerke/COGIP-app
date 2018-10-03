@@ -24,5 +24,6 @@
       </tbody>
     </table>
   </div>
+  <a class="button create is-rounded <?php sessionCheckAdd() ?>" <?php sessionCheckAdd() ?> href="?page=createcontact&createcontact">Nouveau client</a>
  </div>
 </div>
