@@ -3,19 +3,19 @@
     <div class="box">
       <form class="" action="" method="post">
         <h2 class="subtitle is-size-3 has-text-weight-bold"> Ajouter une nouvelle société</h2>
-        <label for="socialname">Social name</label>
+        <label for="socialname">Nom</label>
         <input class="input is-link is-rounded" type="text" name="socialname" value="">
         <br><br>
-        <label for="adresse">Address</label>
+        <label for="adresse">Adresse</label>
         <input class="input is-link is-rounded" type="text" name="adresse" value="">
         <br><br>
-        <label for="country">Country</label>
+        <label for="country">Pays</label>
         <input class="input is-link is-rounded" type="text" name="country" value="">
         <br><br>
-        <label for="tvanumber">TVA number</label>
+        <label for="tvanumber">Numéro de TVA</label>
         <input class="input is-link is-rounded" type="number" name="tvanumber" value="">
         <br><br>
-        <label for="telephonesociete">Phone number</label>
+        <label for="telephonesociete">Numéro de Téléphone</label>
         <input class="input is-link is-rounded" type="number" name="telephonesociete" value="">
         <br><br>
         <label for="type">Type</label>

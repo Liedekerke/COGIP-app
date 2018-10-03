@@ -40,19 +40,6 @@
              </tr>
            </tbody>
          </table>
-          <table>
-            <thead>
-              <th>factures</th>
-            </thead>
-            <tbody>
-              <?php while ($donnee2 = $displayDetailsPersonnes2->fetch()) { ?>
-                <tr>
-                  <td><a href="?page=detailfacture&factures=<?php echo $donnee2['idfactures'] ?>"><?php echo $donnee2['idfactures'] ?></a>
-                  </td>
-                </tr>
-              <?php } ?>
-            </tbody>
-          </table>
           <input class="button is-link is-rounded is-pulled-right" type="submit" name="update" value="update" <?php sessionCheckDelUpd() ?>>
         </form>
       </div>
