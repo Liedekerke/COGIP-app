@@ -16,16 +16,16 @@
              <tr>
              <?php while ($donnee = $displayDetailsPersonnes->fetch()) { ?>
                  <td>
-                   <input class="input is-link is-rounded" type="date" type="text" name="name" value="<?php echo $donnee['personnesName'] ?>">
+                   <input class="input is-link is-rounded" type="text" name="name" value="<?php echo $donnee['personnesName'] ?>">
                  </td>
                  <td>
-                   <input class="input is-link is-rounded" type="date" type="text" name="firstname" value="<?php echo $donnee['firstname'] ?>">
+                   <input class="input is-link is-rounded" type="text" name="firstname" value="<?php echo $donnee['firstname'] ?>">
                  </td>
                  <td>
-                   <input class="input is-link is-rounded" type="date" type="number" name="personnesphone" value="<?php echo $donnee['personnesphone'] ?>">
+                   <input class="input is-link is-rounded" type="number" name="personnesphone" value="<?php echo $donnee['personnesphone'] ?>">
                  </td>
                  <td>
-                   <input class="input is-link is-rounded" type="date" type="email" name="email" value="<?php echo $donnee['email'] ?>">
+                   <input class="input is-link is-rounded" type="email" name="email" value="<?php echo $donnee['email'] ?>">
                  </td>
              <?php } ?>
               <td>
@@ -40,7 +40,6 @@
              </tr>
            </tbody>
          </table>
-          <?php echo $message; ?>
           <table>
             <thead>
               <th>factures</th>
@@ -59,3 +58,4 @@
       </div>
     </div>
   </div>
+    <?php echo $message; ?>
