@@ -24,11 +24,11 @@ if (isset($_POST['update'])) {
   $updateperson->bindParam(':idsociete', $idsociete);
   $updateperson->bindParam(':personnesphone', $personnesphone);
   $updateperson->bindParam(':email', $email);
-  $name = $_POST['name'];
-  $firstname = $_POST['firstname'];
-  $idsociete = $_POST['idsociete'];
-  $personnesphone = $_POST['personnesphone'];
-  $email = $_POST['email'];
+  $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+  $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
+  $idsociete = filter_var(filter_var($_POST['idsociete'], FILTER_SANITIZE_NUMBER_INT), FILTER_SANITIZE_NUMBER_INT);
+  $personnesphone = filter_var(filter_var($_POST['personnesphone'], FILTER_SANITIZE_NUMBER_INT), FILTER_SANITIZE_NUMBER_INT);
+  $email = filter_var(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL), FILTER_VALIDATE_EMAIL);
   $updateperson->execute();
   $message = 'contact modifié avec succès.';
 }

@@ -11,10 +11,10 @@ $createfacture->bindParam(':idpersonnes', $idpersonnes);
 $message = '';
 
 if (isset($_POST['submit'])) {
-  $datefacture = $_POST['datefacture'];
+  $datefacture = filter_var(preg_replace("([^0-9/] | [^0-9-])","",$_POST['datefacture']));
   $prestationmotif = filter_var($_POST['prestationmotif'], FILTER_SANITIZE_STRING);
-  $idsociete = $_POST['idsociete'];
-  $idpersonnes = $_POST['idpersonnes'][$idsociete -1];
+  $idsociete = filter_var(filter_var($_POST['idsociete'], FILTER_SANITIZE_NUMBER_INT) FILTER_VALIDATE_INT);
+  $idpersonnes = filter_var(filter_var($_POST['idpersonnes'][$idsociete -1], FILTER_SANITIZE_NUMBER_INT) FILTER_VALIDATE_INT);
   $createfacture->execute();
   $message = 'Facture ajoutée avec succès.';
 }

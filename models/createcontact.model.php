@@ -15,7 +15,7 @@ if(isset($_POST['update'])){
   $firstname = filter_var($_POST['firstname'],FILTER_SANITIZE_STRING);
   $personnesphone = filter_var(filter_var($_POST['personnesphone'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT);
   $email = filter_var(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL), FILTER_VALIDATE_EMAIL);
-  $idsociete = $_POST['idsociete'];
+  $idsociete = filter_var(filter_var($_POST['idsociete'], FILTER_SANITIZE_NUMBER_INT) FILTER_VALIDATE_INT);
   $message = 'contact rajouté avec succès.';
 $createcontact2->execute();
 }
