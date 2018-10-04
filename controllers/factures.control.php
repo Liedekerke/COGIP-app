@@ -10,8 +10,6 @@ if (isset($_POST['delete'])) {
     $errorDelFactures = "la suppression ne c'est pas faite correctement";
   }
 }
-
 require "models/factures.model.php";
 require "views/factures.view.php";
-
 ?>

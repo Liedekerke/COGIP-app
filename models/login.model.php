@@ -1,7 +1,5 @@
 <?php
-
 $test = $dbh->query('SELECT * FROM users');
-
 if ( isset($_POST['submit']) ) {
   session_start();
   $_SESSION['username'] = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
@@ -17,12 +15,10 @@ if ( isset($_POST['submit']) ) {
     header('location:?page=login');
   }
 }
-
 $errormessage = '';
 if ( $_GET['page'] == 'login' ) {
   $errormessage = "mot de passe ou login invalide";
 }
-
 switch ($_GET['page']) {
   case 'logintrue':
     $buttonvalue = 'delete';
@@ -31,17 +27,14 @@ switch ($_GET['page']) {
     session_destroy();
     header('location:?page=');
     break;
-
   default:
     $buttonvalue = 'submit';
     $buttontext = 'login';
     break;
 }
-
 if ( isset($_POST['delete']) ) {
   session_start();
   session_destroy();
   header('location:?page=');
 }
-
  ?>

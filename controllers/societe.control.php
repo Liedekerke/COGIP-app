@@ -10,7 +10,6 @@ if (isset($_POST['delete2'])) {
     $errorDelSociete = "la suppression ne c'est pas faite correctement";
   }
  }
-
 require "models/societe.model.php";
 require "views/societe.view.php";
  ?>

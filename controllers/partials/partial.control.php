@@ -1,14 +1,7 @@
 <?php
-//common model
-/* Connect to a MySQL database using driver invocation */
 $dsn = getenv('DSN');
 $user = getenv('USER');
 $password = getenv('PASSWORD');
-// $dsn = 'mysql:dbname=cgpi;host=127.0.0.1';
-// $user ='root';
-// $password ='12345678';
-
-
 function sessionCheck() {
   global $dbh;
   $check = $dbh->prepare('SELECT * FROM users WHERE name = :name ');
@@ -19,7 +12,6 @@ function sessionCheck() {
     header('location:?page=login');
   }
 }
-
 function sessionCheckAdd() {
   global $dbh;
   $check = $dbh->prepare('SELECT * FROM users WHERE name = :name ');
@@ -30,7 +22,6 @@ function sessionCheckAdd() {
     echo 'disabled';
   }
 }
-
 function sessionCheckDelUpd() {
   global $dbh;
   $check = $dbh->prepare('SELECT * FROM users WHERE name = :name ');
@@ -41,13 +32,11 @@ function sessionCheckDelUpd() {
     echo 'disabled';
   }
 }
-
 function testselect($par1, $par2) {
   if ($par1 == $par2) {
     echo "selected";
   }
 }
-
 function delete($database, $param) {
   global $dbh;
   $check = $dbh->prepare('SELECT * FROM users WHERE name = :name ');
@@ -61,12 +50,9 @@ function delete($database, $param) {
     $deleteFacture->execute();
   }
 }
-
 try {
     $dbh = new PDO($dsn, $user, $password);
     } catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
 }
-
-// echo $dsn . $user . $password;
 ?>

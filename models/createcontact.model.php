@@ -1,15 +1,12 @@
 <?php
 $createcontact2 = $dbh->prepare('INSERT INTO personnes (name, firstname, personnesphone, email, idsociete) VALUES (:name, :firstname, :personnesphone, :email, :idsociete)');
 $createcontact = $dbh->query("SELECT socialname, idsociete FROM societe");
-
 $createcontact2->bindParam(':name',$name);
 $createcontact2->bindParam(':firstname',$firstname);
 $createcontact2->bindParam(':personnesphone',$personnesphone);
 $createcontact2->bindParam(':email',$email);
 $createcontact2->bindParam(':idsociete',$idsociete);
-
 $message = '';
-
 if(isset($_POST['update'])){
   global $dbh;
   $check = $dbh->prepare('SELECT * FROM users WHERE name = :name ');

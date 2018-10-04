@@ -9,10 +9,8 @@
   $displayDetailsFactures->bindParam(':idfactures', $idfactures);
   $displayDetailsFactures2 = $dbh->query("SELECT socialname, idsociete FROM societe");
   $displayDetailsFactures3 = $dbh->query("SELECT idpersonnes, name, firstname FROM personnes");
-
   $idfactures = $_GET['factures'];
   $message = '';
-
   if (isset($_POST['update'])) {
     try {
       $datefacture = $_POST['datefacture'];
@@ -26,6 +24,4 @@
     }
   }
   $displayDetailsFactures->execute();
-
-
  ?>

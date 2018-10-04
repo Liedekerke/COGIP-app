@@ -17,10 +17,7 @@ if (isset($_POST['update'])) {
     $message = "vous ne puvez pas changer les permissions";
   }
 }
-
 $users = $dbh->query('SELECT * FROM users');
 $priv = $dbh->query('SELECT privilege FROM users GROUP BY privilege');
 $donnee2 = $priv->fetchAll();
-
-
  ?>
