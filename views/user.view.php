@@ -21,12 +21,13 @@
                 </div>
               </td>
               <td> <input type="hidden" name="ident" value="<?php echo $donnee['name'] ?>"> </td>
-              <td> <input type="submit" name="update" value="test" <?php sessionCheckDelUpd() ?>> </td>
+              <td> <input type="submit" name="update" value="update user" <?php sessionCheckDelUpd() ?>> </td>
             </tr>
           </form>
         <?php } ?>
       </tbody>
     </table>
+    <?php echo $message ?>
   </div>
   </div>
 </div>
