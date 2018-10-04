@@ -1,13 +1,24 @@
 # COGIP-app
 
 * Projet à trois du *28/08 au 04/09/2018*.  
-* Lien vers [consignes](https://github.com/becodeorg/Johnson2/tree/master/projets/COGIPapp). 
+* Lien vers [consignes](https://github.com/becodeorg/Johnson2/tree/master/projets/COGIPapp).
 
---- 
+---
 
 ## Le projet
 
-Création d'un dashboard pour Jean-Christian Ranu, comptable à la COGIP afin de gérer les sociétés, factures et clients de la manière la plus efficace possible. 
+Création d'un dashboard pour Jean-Christian Ranu, comptable à la COGIP afin de gérer les sociétés, factures et clients de la manière la plus efficace possible.
+
+[Site de l'application](https://cogip-app.000webhostapp.com/)
+
+### Liste des utilisateurs:
+
+Username | Password
+--- | ---
+Jean-Christian | Ranu
+Muriel | Perrache
+guest | guest
+
 
 ### Objectifs d'apprentissage
 
@@ -40,6 +51,6 @@ Création d'un dashboard pour Jean-Christian Ranu, comptable à la COGIP afin de
 
 ![Schéma DB](assets/img/schema_db.svg)  
 
-## SQL 
+## SQL
 
-Ajouter! 
+Present dans le dossier database
