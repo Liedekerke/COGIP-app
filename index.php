@@ -1,10 +1,7 @@
 <?php
-  require "views/partials/head.view.php";
-
   if (!isset($_GET['page'])) {
     $_GET['page'] = '';
   }
-
   switch ($_GET['page']) {
     case 'detailfacture':
       require "controllers/detailfacture.control.php";

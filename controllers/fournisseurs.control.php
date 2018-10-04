@@ -1,4 +1,6 @@
 <?php
+$title = "liste des fournisseurs";
+require "views/partials/head.view.php";
 session_start();
 require "controllers/partials/partial.control.php";
 sessionCheck();
