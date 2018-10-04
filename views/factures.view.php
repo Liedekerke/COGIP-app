@@ -25,5 +25,6 @@
        </tbody>
      </table>
   </div>
+  <a class="button create is-rounded <?php sessionCheckAdd() ?>" <?php sessionCheckAdd() ?> href="?page=newfacture">Nouvelle facture</a>
  </div>
 </div>

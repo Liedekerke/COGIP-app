@@ -24,7 +24,7 @@
 			</div>
 			<label class="checkbox">
   				<input type="checkbox">
-  				Remember me
+  				Se souvenir de moi
 			</label>
 			<br>
 			<div class="field">

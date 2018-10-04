@@ -8,9 +8,9 @@
           <th>id</th>
           <th>date</th>
           <th>motif</th>
-          <th>social name</th>
+          <th>nom social</th>
           <th>relation</th>
-          <th>name</th>
+          <th>nom</th>
           <th></th>
         </thead>
         <tbody>
