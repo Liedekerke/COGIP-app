@@ -23,20 +23,29 @@ $createType->bindParam(':idsociete', $idsociete3);
 $message = '';
 
 if(isset($_POST['createsociete'])) {
+  global $dbh;
+  $check = $dbh->prepare('SELECT * FROM users WHERE name = :name ');
+  $check->bindParam(':name', $_SESSION['username']);
+  $check->execute();
+  $check2 = $check->fetch();
+  if ($check2['privilege'] == 'IDDQD' || $check2['privilege'] == 'MODO') {
     $socialname = filter_var($_POST['socialname'], FILTER_SANITIZE_STRING);
     $adresse = filter_var($_POST['adresse'], FILTER_SANITIZE_STRING);
     $country = filter_var($_POST['country'], FILTER_SANITIZE_STRING);
-    $tvanumber = filter_var(filter_var($_POST['tvanumber'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT);
-    $telephonesociete = filter_var(filter_var($_POST['telephonesociete'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT);
+    $testTva = ( (strlen($_POST["tvanumber"]) >= 4) && (strlen($_POST["tvanumber"]) <= 14) && (filter_var($_POST['tvanumber'], FILTER_SANITIZE_STRING) !== FALSE) ) ? $tvanumber = filter_var($_POST['tvanumber'], FILTER_SANITIZE_STRING) : $message .= "le numero de tva est invalide";
+    $testphone = ( ($_POST['telephonesociete'] < 10000000000) && (filter_var(filter_var($_POST['telephonesociete'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT) !== FALSE) ? $telephonesociete = filter_var(filter_var($_POST['telephonesociete'], FILTER_SANITIZE_NUMBER_INT), FILTER_VALIDATE_INT): $message .= " numero de telephone non valide" );
    	$type = $_POST['type'];
    	$relation = $_POST['relation'];
     $idsociete = $lastSociete->fetch();
     $idsociete2 = $idsociete['idsociete'];
     $idsociete3 = $idsociete2 + 1;
-   	$createSociete->execute();
-	  $createType->execute();
-    $message = 'société ajoutée avec succès.';
+    if ($message == '') {
+      $createSociete->execute();
+  	  $createType->execute();
+      $message = 'société ajoutée avec succès.';
+    }
+  } else {
+    $message = "Vous ne pouvez pas ajouter de contact";
   }
-
-
+}
 ?>

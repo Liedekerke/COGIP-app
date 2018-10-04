@@ -11,12 +11,21 @@ $createfacture->bindParam(':idpersonnes', $idpersonnes);
 $message = '';
 
 if (isset($_POST['submit'])) {
-  $datefacture = $_POST['datefacture'];
-  $prestationmotif = filter_var($_POST['prestationmotif'], FILTER_SANITIZE_STRING);
-  $idsociete = $_POST['idsociete'];
-  $idpersonnes = $_POST['idpersonnes'][$idsociete -1];
-  $createfacture->execute();
-  $message = 'Facture ajoutée avec succès.';
+  global $dbh;
+  $check = $dbh->prepare('SELECT * FROM users WHERE name = :name ');
+  $check->bindParam(':name', $_SESSION['username']);
+  $check->execute();
+  $check2 = $check->fetch();
+  if ($check2['privilege'] == 'IDDQD' || $check2['privilege'] == 'MODO') {
+    $datefacture = $_POST['datefacture'];
+    $prestationmotif = filter_var($_POST['prestationmotif'], FILTER_SANITIZE_STRING);
+    $idsociete = $_POST['idsociete'];
+    $idpersonnes = $_POST['idpersonnes'][$idsociete -1];
+    $createfacture->execute();
+    $message = 'Facture ajoutée avec succès.';
+  } else {
+    $message = "Vous ne pouvez pas ajouter de factures";
+  }
 }
 
 $donnee2 = $personneslist->fetchAll();

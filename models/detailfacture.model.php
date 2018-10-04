@@ -14,12 +14,16 @@
   $message = '';
 
   if (isset($_POST['update'])) {
-    $datefacture = $_POST['datefacture'];
-    $prestationmotif = filter_var($_POST['prestationmotif'], FILTER_SANITIZE_STRING);
-    $idsociete = $_POST['idsociete'];
-    $idpersonnes = $_POST['idpersonnes'];
-    $updateDetailFacture->execute();
-    $message = 'facture modifiée avec succès';
+    try {
+      $datefacture = $_POST['datefacture'];
+      $prestationmotif = filter_var($_POST['prestationmotif'], FILTER_SANITIZE_STRING);
+      $idsociete = $_POST['idsociete'];
+      $idpersonnes = $_POST['idpersonnes'];
+      $updateDetailFacture->execute();
+      $message = 'facture modifiée avec succès';
+    } catch (\Exception $e) {
+      $message = "la mise a jour ne s'est pas faite correctement";
+    }
   }
   $displayDetailsFactures->execute();
 

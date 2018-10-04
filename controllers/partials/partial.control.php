@@ -50,10 +50,16 @@ function testselect($par1, $par2) {
 
 function delete($database, $param) {
   global $dbh;
-  $deleteFacture = $dbh->prepare("DELETE FROM ".$database." WHERE ".$param." = :idgeneral");
-  $deleteFacture->bindParam(':idgeneral', $delete);
-  $delete = $_POST['iddelete'];
-  $deleteFacture->execute();
+  $check = $dbh->prepare('SELECT * FROM users WHERE name = :name ');
+  $check->bindParam(':name', $_SESSION['username']);
+  $check->execute();
+  $check2 = $check->fetch();
+  if ($check2['privilege'] == 'IDDQD') {
+    $deleteFacture = $dbh->prepare("DELETE FROM ".$database." WHERE ".$param." = :idgeneral");
+    $deleteFacture->bindParam(':idgeneral', $delete);
+    $delete = $_POST['iddelete'];
+    $deleteFacture->execute();
+  }
 }
 
 try {

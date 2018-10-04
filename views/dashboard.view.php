@@ -32,6 +32,7 @@
                      <button class="button is-link is-inverted" type="submit" name="delete" <?php sessionCheckDelUpd() ?>><i class="fas fa-trash-alt"></i></button>
                    </form>
                  </td>
+                 <td><?php echo $errorDelFactures ?></td>
                </tr>
              <?php } ?>
             </tbody>
@@ -65,6 +66,7 @@
                      <button class="button is-link is-inverted" type="submit" name="delete2" <?php sessionCheckDelUpd() ?>><i class="fas fa-trash-alt"></i></button>
                    </form>
                   </td>
+                  <td><?php echo $errorDelSociete ?></td>
                 </tr>
               <?php } ?>
             </tbody>
@@ -98,6 +100,7 @@
                      <button class="button is-link is-inverted" type="submit" name="delete3" <?php sessionCheckDelUpd() ?>><i class="fas fa-trash-alt"></i></button>
                    </form>
                 </td>
+                <td><?php echo $errorDelPersonnes ?></td>
               </tr>
               <?php } ?>
             </tbody>

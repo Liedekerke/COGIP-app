@@ -24,7 +24,7 @@
                    <input class="input is-link is-rounded" type="number" name="telephonesociete" value="<?php echo $donneesixth['telephonesociete'] ?>">
                  </td>
                  <td>
-                  <input class="input is-link is-rounded" type="number" name="tvanumber" value="<?php echo $donneesixth['tvanumber'] ?>">
+                  <input class="input is-link is-rounded" type="text" name="tvanumber" value="<?php echo $donneesixth['tvanumber'] ?>">
                  </td>
                  <td><input class="button is-link is-rounded" type="submit" name="update" value="update" <?php sessionCheckDelUpd() ?>></td>
                </tr>

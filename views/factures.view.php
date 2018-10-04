@@ -19,6 +19,7 @@
                  <button class="button is-link is-inverted" type="submit" name="delete" <?php sessionCheckDelUpd() ?>><i class="fas fa-trash-alt"></i></button>
                </form>
              </td>
+             <td><?php echo $errorDelFactures ?></td>
            </tr>
          <?php } ?>
        </tbody>

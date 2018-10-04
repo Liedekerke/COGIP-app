@@ -1,5 +1,5 @@
 <div class="columns structure-pages">
- <div class="column is-4 is-offset-4">    
+ <div class="column is-4 is-offset-4">
     <div class="box">
       <form class="" action="" method="post">
         <h2 class="subtitle is-size-3 has-text-weight-bold"> Ajouter une nouvelle société</h2>
@@ -13,7 +13,7 @@
         <input class="input is-link is-rounded" type="text" name="country" value="">
         <br><br>
         <label for="tvanumber">TVA number</label>
-        <input class="input is-link is-rounded" type="number" name="tvanumber" value="">
+        <input class="input is-link is-rounded" type="text" name="tvanumber" value="">
         <br><br>
         <label for="telephonesociete">Phone number</label>
         <input class="input is-link is-rounded" type="number" name="telephonesociete" value="">
@@ -40,5 +40,5 @@
       </form>
       <?php echo $message; ?>
     </div>
-  </div>  
-</div> 
+  </div>
+</div>
