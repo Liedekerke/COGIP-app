@@ -27,6 +27,9 @@ switch ($_GET['page']) {
   case 'logintrue':
     $buttonvalue = 'delete';
     $buttontext = 'logout';
+    session_start();
+    session_destroy();
+    header('location:?page=');
     break;
 
   default:
